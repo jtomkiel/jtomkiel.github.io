@@ -1,13 +1,13 @@
 # main links links
 main:
   - title: "About"
-    url: https://mmistakes.github.io/minimal-mistakes/about/
+    url: /about/
   - title: "Posts"
     url: /year-archive/
-  - title: "Collections"
-    url: /collection-archive/
-  - title: "Sitemap"
-    url: /sitemap/
+ # - title: "Collections"
+ #   url: /collection-archive/
+ # - title: "Sitemap"
+ #   url: /sitemap/
 
 # sidebar navigation list sample
 sidebar-sample:
@@ -52,4 +52,4 @@ sidebar-sample:
       - title: "Child Page D2"
         url: /child-page-d2/
       - title: "Child Page D3 (External)"
-        url: https://your-domain.com
+        url: https://www.joshtomkiel.com

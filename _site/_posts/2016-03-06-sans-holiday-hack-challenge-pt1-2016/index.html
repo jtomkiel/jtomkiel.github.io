@@ -1,0 +1,327 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.11.2 by Michael Rose
+  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Part 1: A Most Curious Business Card - josh@blog:~$ cat README.txt</title>
+<meta name="description" content="SANS Holiday Hack 2016 Writeup - The Challenges - Part 1">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="josh@blog:~$ cat README.txt">
+<meta property="og:title" content="Part 1: A Most Curious Business Card">
+<meta property="og:url" content="http://localhost:4000/_posts/2016-03-06-sans-holiday-hack-challenge-pt1-2016/">
+
+
+  <meta property="og:description" content="SANS Holiday Hack 2016 Writeup - The Challenges - Part 1">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/sans-2016.png">
+
+
+
+  <meta name="twitter:site" content="@jtomkiel">
+  <meta name="twitter:title" content="Part 1: A Most Curious Business Card">
+  <meta name="twitter:description" content="SANS Holiday Hack 2016 Writeup - The Challenges - Part 1">
+  <meta name="twitter:url" content="http://localhost:4000/_posts/2016-03-06-sans-holiday-hack-challenge-pt1-2016/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="http://localhost:4000/assets/images/sans-2016.png">
+    
+  
+
+  
+
+
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/_posts/2016-03-06-sans-holiday-hack-challenge-pt1-2016/">
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "http://localhost:4000",
+      "logo": "http://localhost:4000/assets/images/bio-photo.jpg"
+    }
+  </script>
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Josh Tomkiel",
+      "url": "http://localhost:4000",
+      "sameAs": null
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="josh@blog:~$ cat README.txt Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--default wide">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/">josh@blog:~$ cat README.txt</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/about/" >About</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/year-archive/" >Posts</a>
+            </li>
+          
+        </ul>
+        
+        <button class="search__toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    <div class="initial-content">
+      <p class="notice--danger">Question 1: What is the secret message in Santa’s tweets?</p>
+<p class="notice--danger">Question 2: What is inside the ZIP file distributed by Santa’s team?</p>
+
+<p>In order to answer these questions, you first had to know a little information about Santa.  Luckily, all the information needed was printed on his business card discovered by Josh and Jessica Dosis.</p>
+
+<p><img src="/assets/images/sans2016/santa_business_card.png" alt="Santa's Business Card" /></p>
+
+<p>Per the card, Santa is <a href="https://twitter.com/SantaWClaus">@santawclaus</a> on twitter.  Let’s check out his account.</p>
+
+<p><img src="/assets/images/sans2016/santa_twitter.png" alt="Santa's twitter" /></p>
+
+<p>Discovery of his hidden message required scraping and saving all his tweets.  To do this, I used a free service called <a href="http://twlets.com">twlets</a>.</p>
+
+<p><img src="/assets/images/sans2016/grab_tweets_twitter.png" alt="twlets" /></p>
+
+<p>I was able to export them to an Excel (XLSX) file.</p>
+
+<p>An image started to appear in <code class="highlighter-rouge">Column E</code> but it wasn’t clear.  This was fixed by changing to a “Fixed Width” font.<br />
+I chose the appropriately named font “Hack.”</p>
+
+<p><img src="/assets/images/sans2016/santa_tweets.gif" alt="animated_gif" /></p>
+
+<p class="notice">What is the secret message in Santa’s tweets?
+<strong>bugbounty</strong></p>
+
+<p>Answering the second question required performing some detective work on Santa’s <a href="https://www.instagram.com/santawclaus">@santawclaus</a> instagram account.</p>
+
+<p>The first picture he uploaded contained the required information to download the ZIP file.</p>
+
+<p><img src="/assets/images/sans2016/santa_instagram.png" alt="instagram" /></p>
+
+<p>(enhance…)</p>
+
+<p>Combining the URL on the paper (1) with the file name on the monitor (2) gave the direct location for the ZIP file.</p>
+
+<p><img src="/assets/images/sans2016/zip_location.png" alt="instagram" /></p>
+
+<p>Grab the ZIP file and extract the contents.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">josh@MacBook-Pro ~/Downloads $ curl -O www.northpolewonderland.com/SantaGram_v4.2.zip</span>
+  <span class="s">% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</span>
+                                 <span class="s">Dload  Upload   Total   Spent    Left  Speed</span>
+<span class="s">100 1917k  100 1917k    0     0  4678k      0 --:--:-- --:--:-- --:--:-- 4687k</span>
+<span class="s">josh@MacBook-Pro ~/Downloads $ file SantaGram_v4.2.zip</span>
+<span class="s">SantaGram_v4.2.zip</span><span class="pi">:</span> <span class="s">Zip archive data, at least v2.0 to extract</span>
+<span class="s">josh@MacBook-Pro ~/Downloads $ unzip SantaGram_v4.2.zip</span>
+<span class="na">Archive</span><span class="pi">:</span>  <span class="s">SantaGram_v4.2.zip</span>
+<span class="pi">[</span><span class="nv">SantaGram_v4.2.zip</span><span class="pi">]</span> <span class="s">SantaGram_4.2.apk password</span><span class="pi">:</span>
+  <span class="na">inflating</span><span class="pi">:</span> <span class="s">SantaGram_4.2.apk</span>
+</code></pre></div></div>
+
+<p class="notice">What is inside the ZIP file distributed by Santa’s team?
+<strong><a href="/assets/files/SantaGram_4.2.apk">SantaGram_4.2.apk</a></strong> (MD5 = bdb7ca46ce95e9652616852d7c1cf127)</p>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><div class="search-searchbar"></div>
+    <div class="search-hits"></div></div>
+      </div>
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+      <li><a href="https://twitter.com/jtomkiel"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+    
+    
+    
+    
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 Josh Tomkiel. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
+
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '',
+  apiKey: '',
+  indexName: '',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <div class="list__item">
+      <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+        <h2 class="archive__item-title" itemprop="headline"><a href="${url}">${title}</a></h2>
+        <div class="archive__item-excerpt" itemprop="description">${content}</div>
+      </article>
+    </div>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate
+    }
+  })
+);
+
+// Starting the search
+search.start();
+</script>
+
+
+
+
+
+  </body>
+</html>

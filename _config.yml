@@ -11,12 +11,12 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "InfoSec Blog"
+title                    : "josh@blog:~$ cat README.txt"
 title_separator          : "-"
 name                     : "Josh Tomkiel"
-description              : "Minimal Mistakes theme test."
+description              : "Another infosec blog"
 url                      : "https://www.joshtomkiel.com" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : "/blog"
+baseurl                  : "" 
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : "/assets/images/500x300.png" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
@@ -54,15 +54,15 @@ search                   : true # true, false (default)
 search_full_content      : true # true, false (default)
 search_provider          : "algolia"
 algolia:
-  application_id         : "QB6HVGBSBA"
-  index_name             : "dev_minimal-mistakes"
-  search_only_api_key    : "9d5014e5bbc77372547bce778dfa5663"
+  application_id         : ""
+  index_name             : ""
+  search_only_api_key    : ""
   powered_by             : true
 
 # SEO Related
-google_site_verification :
-bing_site_verification   :
-yandex_site_verification :
+google_site_verification : 
+bing_site_verification   : 
+yandex_site_verification : 
 
 # Social Sharing
 twitter:
@@ -91,7 +91,7 @@ author:
   name             : "Josh Tomkiel"
   avatar           : "/assets/images/bio-photo.jpg"
   bio              : "Information Security Professional"
-  #location        : #"Somewhere"
+  location         : "127.0.0.1"
   email            : "jtomkiel+blog@gmail.com"
   uri              :
   home             : # null (default), "absolute or relative url to link to author home"
@@ -123,6 +123,7 @@ author:
 include:
   - .htaccess
   - _pages
+  - _posts
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -277,27 +278,3 @@ defaults:
     values:
       layout: single
       author_profile: true
-  # _recipes
-  - scope:
-      path: ""
-      type: recipes
-    values:
-      layout: single
-      author_profile: true
-      share: true
-  # _pets
-  - scope:
-      path: ""
-      type: pets
-    values:
-      layout: single
-      author_profile: true
-      share: true
-  # _portfolio
-  - scope:
-      path: ""
-      type: portfolio
-    values:
-      layout: single
-      author_profile: false
-      share: true
