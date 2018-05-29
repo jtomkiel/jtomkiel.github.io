@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.11.2 by Michael Rose
+  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+--><html lang="en" class="no-js">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Part 3: A Fresh-Baked Holiday Pi - josh@blog:~$ cat README.txt</title>
+<meta name="description" content="SANS Holiday Hack 2016 Writeup - The Challenges - Part 3">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="josh@blog:~$ cat README.txt">
+<meta property="og:title" content="Part 3: A Fresh-Baked Holiday Pi">
+<meta property="og:url" content="http://localhost:4000/_posts/2016-03-06-sans-holiday-hack-challenge-pt3-2016/">
+
+
+  <meta property="og:description" content="SANS Holiday Hack 2016 Writeup - The Challenges - Part 3">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/sans-2016.png">
+
+
+
+  <meta name="twitter:site" content="@jtomkiel">
+  <meta name="twitter:title" content="Part 3: A Fresh-Baked Holiday Pi">
+  <meta name="twitter:description" content="SANS Holiday Hack 2016 Writeup - The Challenges - Part 3">
+  <meta name="twitter:url" content="http://localhost:4000/_posts/2016-03-06-sans-holiday-hack-challenge-pt3-2016/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="http://localhost:4000/assets/images/sans-2016.png">
+    
+  
+
+  
+
+
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/_posts/2016-03-06-sans-holiday-hack-challenge-pt3-2016/">
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "http://localhost:4000",
+      "logo": "http://localhost:4000/assets/images/bio-photo.jpg"
+    }
+  </script>
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Josh Tomkiel",
+      "url": "http://localhost:4000",
+      "sameAs": null
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="josh@blog:~$ cat README.txt Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--default wide">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/">josh@blog:~$ cat README.txt</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/about/">About</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/year-archive/">Posts</a>
+            </li>
+          
+        </ul>
+        
+        <button class="search__toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    <div class="initial-content">
+      <p class="notice--danger">Question 5: What is the password for the ‘cranpi’ account on the Cranberry Pi system?</p>
+<p class="notice--danger">Question 6: How did you open each terminal door and where had the villain imprisoned Santa?</p>
+
+<p>After gathering all the pieces to the Cranberry Pi system from the North Pole (a <a href="https://quest2016.holidayhackchallenge.com">Quest</a> objective), you are given a <a href="https://www.northpolewonderland.com/cranbian.img.zip">link</a> to a ZIP file containing a “Cranbian” image.</p>
+
+<p>For this section, I transferred the cranbian.img.zip file over to a <a href="https://www.kali.org/">Kali Linux</a> virtual machine and continued there.</p>
+
+<p>The SANS blog post titled <a href="https://pen-testing.sans.org/blog/2016/12/07/mount-a-raspberry-pi-file-system-image">Mount a Raspberry Pi File System Image</a> walks you through the steps needed to get going. However, I’ll still show the exact commands I used.</p>
+
+<p>Extracting the image…</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">root@gh0st1:/# unzip cranbian.img.zip</span> 
+<span class="na">Archive</span><span class="pi">:</span>  <span class="s">cranbian.img.zip</span>
+  <span class="s">inflating</span><span class="pi">:</span> <span class="s">cranbian-jessie.img</span>
+</code></pre></div></div>
+
+<p>Using <code class="highlighter-rouge">fdisk</code> to get important information about the image (partition and sector sizes/types/offsets)…</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">root@gh0st1:/# fdisk -l cranbian-jessie.img</span>
+<span class="s">Disk cranbian-jessie.img</span><span class="pi">:</span> <span class="s">1.3 GiB, 1389363200 bytes, 2713600 sectors</span>
+<span class="na">Units</span><span class="pi">:</span> <span class="s">sectors of 1 * 512 = 512 bytes</span>
+<span class="s">Sector size (logical/physical)</span><span class="pi">:</span> <span class="s">512 bytes / 512 bytes</span>
+<span class="s">I/O size (minimum/optimal)</span><span class="pi">:</span> <span class="s">512 bytes / 512 bytes</span>
+<span class="na">Disklabel type</span><span class="pi">:</span> <span class="s">dos</span>
+<span class="na">Disk identifier</span><span class="pi">:</span> <span class="s">0x5a7089a1</span>
+
+<span class="s">Device               Boot  Start     End Sectors  Size Id Type</span>
+<span class="s">cranbian-jessie.img1        8192  137215  129024   63M  c W95 FAT32 (LBA)</span>
+<span class="s">cranbian-jessie.img2      137216 2713599 2576384  1.2G 83 Linux</span>
+</code></pre></div></div>
+
+<p>Based on the <code class="highlighter-rouge">fdisk</code> output, cranbian-jessie.img2 is our primary target.  It’s the largest partition (1.2G) and uses the Linux file system.</p>
+
+<p>Before mounting it, I need to know where the file system begins.  This is done by multiplying the sector size (512 bytes) and the start sector for the Linux file system (137216) I come up with the total file system size in bytes (70254592).</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">root@gh0st1:/# echo $((512*137216))</span>
+<span class="s">70254592</span>
+</code></pre></div></div>
+<p>Now to make a directory to mount the image…</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">root@gh0st1:/# mkdir /root/cranbian</span>
+</code></pre></div></div>
+
+<p>Mounting the image to that directory…</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">root@gh0st1:/# mount -v -o offset=70254592 -t ext4 /cranbian-jessie.img /root/cranbian</span>
+<span class="na">mount</span><span class="pi">:</span> <span class="s">/dev/loop1 mounted on /root/cranbian.</span>
+</code></pre></div></div>
+
+<p>You can navigate the directory structure as you would normally.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">root@gh0st1:/# cd /root/cranbian/</span>
+<span class="s">root@gh0st1:~/cranbian# ls -la</span>
+<span class="s">total 132</span>
+<span class="s">drwxr-xr-x 21 root root 36864 Dec  5 16:09 .</span>
+<span class="s">drwxr-xr-x 33 root root  4096 Dec 20 05:01 ..</span>
+<span class="s">drwxr-xr-x  2 root root  4096 Nov 23 10:11 bin</span>
+<span class="s">drwxr-xr-x  2 root root  4096 Sep 22 23:52 boot</span>
+<span class="s">drwxr-xr-x  4 root root  4096 Sep 22 22:23 dev</span>
+<span class="s">drwxr-xr-x 77 root root  4096 Dec  5 11:25 etc</span>
+<span class="s">drwxr-xr-x  3 root root  4096 Nov 21 10:25 home</span>
+<span class="s">drwxr-xr-x 17 root root  4096 Nov 23 10:07 lib</span>
+<span class="s">drwx------  2 root root 16384 Sep 22 23:52 lost+found</span>
+<span class="s">drwxr-xr-x  2 root root  4096 Sep 22 22:20 media</span>
+<span class="s">drwxr-xr-x  2 root root  4096 Sep 22 22:20 mnt</span>
+<span class="s">drwxr-xr-x  3 root root  4096 Sep 22 22:27 opt</span>
+<span class="s">drwxr-xr-x  2 root root  4096 Jan  6  2015 proc</span>
+<span class="s">drwx------  2 root root  4096 Nov 23 10:14 root</span>
+<span class="s">drwxr-xr-x  5 root root  4096 Sep 22 22:28 run</span>
+<span class="s">drwxr-xr-x  2 root root  4096 Sep 22 22:39 sbin</span>
+<span class="s">drwxr-xr-x  2 root root  4096 Sep 22 22:20 srv</span>
+<span class="s">drwxr-xr-x  2 root root  4096 Apr 12  2015 sys</span>
+<span class="s">drwxrwxrwt  7 root root  4096 Nov 17 15:17 tmp</span>
+<span class="s">drwxr-xr-x 10 root root  4096 Sep 22 22:20 usr</span>
+<span class="s">drwxr-xr-x 11 root root  4096 Nov 23 10:10 var</span>
+<span class="s">root@gh0st1:~/cranbian#</span> 
+</code></pre></div></div>
+
+<p>To crack the password of a local Linux account with <code class="highlighter-rouge">john</code> you’ll need two things, the /etc/shadow file and the /etc/passwd file.  The <code class="highlighter-rouge">unshadow</code> tool combines the passwd and shadow files so <code class="highlighter-rouge">john</code> can attempt to crack them against a wordlist.  Both <code class="highlighter-rouge">unshadow</code> and <code class="highlighter-rouge">john</code> are distributed with <a href="http://www.openwall.com/john/">John the Ripper</a> which comes preconfigured in Kali.  Since I had access to the Cranbian file system now, the rest is pretty straightforward.</p>
+
+<p>Running <code class="highlighter-rouge">unshadow</code> without any parameters will tell you what it is looking for.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">root@gh0st1:~/# unshadow</span> 
+<span class="na">Usage</span><span class="pi">:</span> <span class="s">unshadow PASSWORD-FILE SHADOW-FILE</span>
+</code></pre></div></div>
+
+<p>Specify the file locations…</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">root@gh0st1:~/# unshadow /root/cranbian/etc/passwd /root/cranbian/etc/shadow</span>
+<span class="s">root:*:0:0:root:/root:/bin/bash</span>
+<span class="s">daemon:*:1:1:daemon:/usr/sbin:/usr/sbin/nologin</span>
+<span class="s">bin:*:2:2:bin:/bin:/usr/sbin/nologin</span>
+<span class="s">sys:*:3:3:sys:/dev:/usr/sbin/nologin</span>
+<span class="s">sync:*:4:65534:sync:/bin:/bin/sync</span>
+<span class="s">games:*:5:60:games:/usr/games:/usr/sbin/nologin</span>
+<span class="s">man:*:6:12:man:/var/cache/man:/usr/sbin/nologin</span>
+<span class="s">lp:*:7:7:lp:/var/spool/lpd:/usr/sbin/nologin</span>
+<span class="s">mail:*:8:8:mail:/var/mail:/usr/sbin/nologin</span>
+<span class="s">news:*:9:9:news:/var/spool/news:/usr/sbin/nologin</span>
+<span class="s">uucp:*:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin</span>
+<span class="s">proxy:*:13:13:proxy:/bin:/usr/sbin/nologin</span>
+<span class="s">www-data:*:33:33:www-data:/var/www:/usr/sbin/nologin</span>
+<span class="s">backup:*:34:34:backup:/var/backups:/usr/sbin/nologin</span>
+<span class="s">list:*:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin</span>
+<span class="s">irc:*:39:39:ircd:/var/run/ircd:/usr/sbin/nologin</span>
+<span class="s">gnats:*:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin</span>
+<span class="s">nobody:*:65534:65534:nobody:/nonexistent:/usr/sbin/nologin</span>
+<span class="s">systemd-timesync:*:100:103:systemd Time Synchronization,,,:/run/systemd:/bin/false</span>
+<span class="s">systemd-network:*:101:104:systemd Network Management,,,:/run/systemd/netif:/bin/false</span>
+<span class="s">systemd-resolve:*:102:105:systemd Resolver,,,:/run/systemd/resolve:/bin/false</span>
+<span class="s">systemd-bus-proxy:*:103:106:systemd Bus Proxy,,,:/run/systemd:/bin/false</span>
+<span class="s">messagebus:*:104:109::/var/run/dbus:/bin/false</span>
+<span class="s">avahi:*:105:110:Avahi mDNS daemon,,,:/var/run/avahi-daemon:/bin/false</span>
+<span class="s">ntp:*:106:111::/home/ntp:/bin/false</span>
+<span class="s">sshd:*:107:65534::/var/run/sshd:/usr/sbin/nologin</span>
+<span class="s">statd:*:108:65534::/var/lib/nfs:/bin/false</span>
+<span class="s">cranpi:$6$2AXLbEoG$zZlWSwrUSD02cm8ncL6pmaYY/39DUai3OGfnBbDNjtx2G99qKbhnidxinanEhahBINm/2YyjFihxg7tgc343b0:1000:1000:,,,:/home/cranpi:/bin/bash</span>
+</code></pre></div></div>
+<p>There is the output above.  This time I will save it to a text file.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">root@gh0st1:~/# unshadow /root/cranbian/etc/passwd /root/cranbian/etc/shadow &gt; /root/unshadow.txt</span>
+</code></pre></div></div>
+
+<p>Thanks to tips received from talking with the elves during the <a href="https://quest2016.holidayhackchallenge.com">Quest</a>, the popular <code class="highlighter-rouge">rockyou.txt</code> wordlist will be used to attempt to crack the password.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">root@gh0st1:~/# john /root/unshadow.txt --wordlist=/usr/share/wordlists/rockyou.txt</span>
+<span class="na">Warning</span><span class="pi">:</span> <span class="s">detected hash type "sha512crypt", but the string is also recognized as "crypt"</span>
+<span class="s">Use the "--format=crypt" option to force loading these as that type instead</span>
+<span class="na">Using default input encoding</span><span class="pi">:</span> <span class="s">UTF-8</span>
+<span class="s">Loaded 1 password hash (sha512crypt, crypt(3) $6$ [SHA512 128/128 AVX 2x])</span>
+<span class="s">Press 'q' or Ctrl-C to abort, almost any other key for status</span>
+<span class="s">0g 0:00:05:06 0.94% (ETA</span><span class="pi">:</span> <span class="s">03:17:10) 0g/s 519.9p/s 519.9c/s 519.9C/s ilovedogs2..hustlers</span>
+<span class="s">0g 0:00:05:18 0.98% (ETA</span><span class="pi">:</span> <span class="s">03:15:48) 0g/s 521.2p/s 521.2c/s 521.2C/s tony89..tina101</span>
+<span class="s">0g 0:00:05:19 0.98% (ETA</span><span class="pi">:</span> <span class="s">03:15:30) 0g/s 521.4p/s 521.4c/s 521.4C/s spiky..solveig</span>
+<span class="s">0g 0:00:09:37 1.83% (ETA</span><span class="pi">:</span> <span class="s">02:57:38) 0g/s 532.7p/s 532.7c/s 532.7C/s hateall..harley143</span>
+<span class="s">0g 0:00:10:14 1.95% (ETA</span><span class="pi">:</span> <span class="s">02:56:13) 0g/s 534.1p/s 534.1c/s 534.1C/s zablan..yuhuu</span>
+<span class="s">0g 0:00:10:15 1.96% (ETA</span><span class="pi">:</span> <span class="s">02:56:09) 0g/s 534.2p/s 534.2c/s 534.2C/s woodpony..winx club</span>
+<span class="s">yummycookies     (cranpi)</span>
+<span class="s">1g 0:00:14:24 DONE (2016-12-11 18:26) 0.001156g/s 525.2p/s 525.2c/s 525.2C/s yveth..yulyul</span>
+<span class="s">Use the "--show" option to display all of the cracked passwords reliably</span>
+<span class="s">Session completed</span>
+</code></pre></div></div>
+<p>After about 14 minutes in my VM with 2GB of RAM, the password was discovered.</p>
+
+<p class="notice">Question 5: What is the password for the ‘cranpi’ account on the Cranberry Pi system?
+<strong>yummycookies</strong></p>
+
+<p class="notice">Question 6: How did you open each terminal door and where had the villain imprisoned Santa?
+This feature was so awesome, it deserved a separate section in my write-up.  See the <a href="/terminals/">terminals</a> section for answers to each challenge.  As for Santa, he was imprisoned in his very own Dungeon For Errant Reindeer (DFER), but he had no memory of what happened or who had imprisoned him.  Finding him required beating the OUTATIME Challenge and traveling back in time to 1978.</p>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<div class="search-searchbar"></div>
+    <div class="search-hits"></div>
+</div>
+      </div>
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+      <li><a href="https://twitter.com/jtomkiel"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+    
+    
+    
+    
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2018 Josh Tomkiel. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
+
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '',
+  apiKey: '',
+  indexName: '',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <div class="list__item">
+      <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+        <h2 class="archive__item-title" itemprop="headline"><a href="${url}">${title}</a></h2>
+        <div class="archive__item-excerpt" itemprop="description">${content}</div>
+      </article>
+    </div>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate
+    }
+  })
+);
+
+// Starting the search
+search.start();
+</script>
+
+
+
+
+
+  </body>
+</html>

