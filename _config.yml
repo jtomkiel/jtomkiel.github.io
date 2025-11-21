@@ -7,14 +7,14 @@
 
 #theme                   : "minimal-mistakes-jekyll"
 remote_theme		 : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "josh@blog:~$ cat README.txt"
-title_separator          : "-"
+title                    : "Josh Tomkiel"
+title_separator          : "|"
 name                     : "Josh Tomkiel"
-description              : "Another infosec blog"
+description              : "Managing Director, Penetration Testing at Schellman | OSCP, OSCE | 10+ Years in InfoSec"
 url                      : "https://www.joshtomkiel.com" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" 
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -90,8 +90,8 @@ analytics:
 author:
   name             : "Josh Tomkiel"
   avatar           : "/assets/images/bio-photo.jpg"
-  bio              : "Information Security Professional"
-  location         : "127.0.0.1"
+  bio              : "Managing Director, Penetration Testing at Schellman. Leading mobile pentesting, phishing programs & Red Team services. OSCP | OSCE"
+  location         : "Greater Philadelphia"
   email            : "jtomkiel+blog@gmail.com"
   uri              :
   home             : # null (default), "absolute or relative url to link to author home"
@@ -101,7 +101,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           :
+  github           : "jtomkiel"
   google_plus      :
   keybase          :
   instagram        :
