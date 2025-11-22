@@ -3,8 +3,6 @@ layout: single
 author_profile: true
 ---
 
-## Hello, I'm Josh Tomkiel
-
 I'm a **Managing Director on the Penetration Testing Team** at [Schellman](https://www.schellman.com/about-us/leadership/josh-tomkiel), based in the Greater Philadelphia area. With over a decade of experience in information security, I lead our mobile penetration testing activities, phishing program, and Red Team service offering.
 
 ### What I Do
