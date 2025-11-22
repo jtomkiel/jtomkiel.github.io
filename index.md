@@ -24,15 +24,12 @@ I have a deep background in all facets of penetration testing and work closely w
 
 ---
 
-<div class="notice--info" markdown="1">
 ## Penetration Testing Resources
 
 Planning a penetration test? These resources will help you get started:
 
 - **[Sample Penetration Test Report](https://www.schellman.com/services/penetration-testing/sample-report)** - See what a professional pen test deliverable looks like
 - **[Scoping Questionnaire](https://www.schellman.com/services/penetration-testing/penetration-test-scoping)** - Define your assessment scope and requirements
-
-</div>
 
 ---
 
