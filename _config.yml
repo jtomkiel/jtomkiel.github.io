@@ -7,11 +7,11 @@
 
 #theme                   : "minimal-mistakes-jekyll"
 remote_theme		 : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "neon" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Josh Tomkiel"
+title                    : "root@tomkiel:~#"
 title_separator          : "|"
 name                     : "Josh Tomkiel"
 description              : "Managing Director, Penetration Testing at Schellman | OSCP, OSCE | 10+ Years in InfoSec"
