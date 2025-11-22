@@ -6,3 +6,104 @@
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+// Custom cyber/hacker aesthetic enhancements
+// ==========================================
+
+// Monospace font for headings (terminal feel)
+h1, h2, h3, .site-title {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+// Site title styling
+.site-title {
+  font-weight: bold;
+  letter-spacing: -0.5px;
+}
+
+// Neon glow effect for primary links
+.page__content a:not(.btn),
+.archive__item-title a {
+  text-shadow: 0 0 2px currentColor;
+  transition: text-shadow 0.2s ease;
+
+  &:hover {
+    text-shadow: 0 0 8px currentColor, 0 0 15px currentColor;
+  }
+}
+
+// Enhanced code blocks
+div.highlighter-rouge,
+figure.highlight {
+  border-left: 3px solid $primary-color;
+  box-shadow: 0 0 10px rgba($primary-color, 0.3);
+}
+
+// Inline code styling
+code.highlighter-rouge {
+  background: rgba($primary-color, 0.1);
+  border: 1px solid rgba($primary-color, 0.3);
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+
+// Author bio enhancements
+.author__bio {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 0.75em;
+  opacity: 0.9;
+}
+
+// Hero/intro section styling
+.page__hero-caption {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+// Subtle scan-line effect for masthead
+.masthead {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.03) 2px,
+      rgba(0, 0, 0, 0.03) 4px
+    );
+    pointer-events: none;
+  }
+}
+
+// Button styling with glow
+.btn--primary {
+  box-shadow: 0 0 10px rgba($primary-color, 0.5);
+
+  &:hover {
+    box-shadow: 0 0 20px rgba($primary-color, 0.8);
+  }
+}
+
+// Archive item hover effect
+.archive__item {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 1em;
+  border-radius: 4px;
+
+  &:hover {
+    transform: translateX(5px);
+    box-shadow: -3px 0 0 $primary-color;
+  }
+}
+
+// Footer terminal style
+.page__footer {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 0.8em;
+}

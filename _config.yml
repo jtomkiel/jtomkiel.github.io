@@ -52,12 +52,7 @@ atom_feed:
   path                   : # blank (default) uses feed.xml
 search                   : true # true, false (default)
 search_full_content      : true # true, false (default)
-search_provider          : "algolia"
-algolia:
-  application_id         : ""
-  index_name             : ""
-  search_only_api_key    : ""
-  powered_by             : true
+search_provider          : "lunr"
 
 # SEO Related
 google_site_verification : 
