@@ -3,17 +3,34 @@ layout: single
 author_profile: true
 ---
 
-I'm a **Managing Director on the Penetration Testing Team** at [Schellman](https://www.schellman.com/about-us/leadership/josh-tomkiel), based in the Greater Philadelphia area. With over a decade of experience in information security, I lead our mobile penetration testing activities, phishing program, and Red Team service offering.
+I'm a **Managing Director** at [Schellman](https://www.schellman.com/about-us/leadership/josh-tomkiel) leading a team of **40+ penetration testers** delivering security assessments across diverse industries and technologies.
 
 ### What I Do
 
-I have a deep background in all facets of penetration testing and work closely with Schellman's service lines to ensure clients' security assessment needs are met. Having been a penetration tester myself, I understand what it takes to deliver a successful assessment.
+Beyond team leadership, I'm heavily involved in:
 
-**Areas of Focus:**
-- Mobile Application Penetration Testing
+- **Business Development** - Working with new organizations to scope and define their security assessment needs
+- **Marketing & Content** - Developing thought leadership content and industry resources
+- **Emerging Threats** - Staying current on evolving attack techniques and security trends
+
+### Our Services
+
+My team delivers comprehensive offensive security services including:
+
+- External & Internal Network Penetration Testing
+- Web & Mobile Application Security Assessments
 - Red Team Operations
-- Phishing & Social Engineering Assessments
-- Internal & External Network Penetration Testing
+- Phishing & Social Engineering Campaigns
+- Cloud Security Assessments
+- IoT & Embedded Device Testing
+
+### Current Interests
+
+I'm passionate about **Generative AI and Large Language Models** and their impact on penetration testing and security. I'm actively exploring:
+
+- How AI/LLMs are changing the threat landscape
+- Agentic frameworks and autonomous security tools
+- Ways to leverage these technologies to increase efficiency and deliver more value to clients
 
 ### Certifications
 
