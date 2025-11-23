@@ -107,3 +107,10 @@ code.highlighter-rouge {
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 0.8em;
 }
+
+// Replace Twitter bird icon with X
+.fa-twitter::before {
+  content: "𝕏" !important;
+  font-family: inherit;
+  font-weight: bold;
+}

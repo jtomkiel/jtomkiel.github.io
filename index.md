@@ -52,4 +52,6 @@ Planning a penetration test? These resources will help you get started:
 
 Check out my [Publications](/publications/) for articles on penetration testing best practices, or browse my [Posts](/year-archive/) for security research and CTF writeups.
 
-The best way to reach me is via [Twitter/X](https://twitter.com/jtomkiel) or [LinkedIn](https://www.linkedin.com/in/jtomkiel/).
+- [LinkedIn](https://www.linkedin.com/in/jtomkiel/)
+- [X (Twitter)](https://twitter.com/jtomkiel)
+- [GitHub](https://github.com/jtomkiel)
